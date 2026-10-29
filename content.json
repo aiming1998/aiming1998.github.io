@@ -315,6 +315,26 @@
       "url": "https://www.horizon.auto/"
     },
     {
+      "id": "tusimple",
+      "period": {
+        "en": "Internship",
+        "zh": "实习"
+      },
+      "title": {
+        "en": "TuSimple",
+        "zh": "图森未来 TuSimple"
+      },
+      "role": {
+        "en": "Autonomous-driving Algorithm Research",
+        "zh": "自动驾驶算法研究"
+      },
+      "description": {
+        "en": "During my internship at TuSimple, I received guidance from Yan Yan, Feng Wang, and Naiyan Wang.",
+        "zh": "在图森未来实习期间，曾受到闫岩、王峰、王乃岩的指导。"
+      },
+      "logo": "assets/tusimple.jpg"
+    },
+    {
       "id": "xiaomi",
       "period": {
         "en": "Internship",
@@ -334,26 +354,6 @@
       },
       "logo": "assets/xiaomi-orange.png",
       "url": "https://www.xiaomiauto.com/global"
-    },
-    {
-      "id": "tusimple",
-      "period": {
-        "en": "Internship",
-        "zh": "实习"
-      },
-      "title": {
-        "en": "TuSimple",
-        "zh": "图森未来 TuSimple"
-      },
-      "role": {
-        "en": "Autonomous-driving Algorithm Research",
-        "zh": "自动驾驶算法研究"
-      },
-      "description": {
-        "en": "During my internship at TuSimple, I received guidance from Yan Yan, Feng Wang, and Naiyan Wang.",
-        "zh": "在图森未来实习期间，曾受到闫岩、王峰、王乃岩的指导。"
-      },
-      "logo": "assets/tusimple.jpg"
     }
   ],
   "education": [
