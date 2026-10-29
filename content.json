@@ -92,6 +92,13 @@
           "url": "https://arxiv.org/abs/2604.03037"
         },
         {
+          "label": {
+            "en": "Code",
+            "zh": "代码"
+          },
+          "url": "https://github.com/FluxVLA/FluxVLA"
+        },
+        {
           "label": "CVF",
           "url": "https://openaccess.thecvf.com/content/CVPR2026W/GigaBrainChallenge/html/Mao_ARM_Advantage_Reward_Modeling_for_Long-Horizon_Manipulation_CVPRW_2026_paper.html"
         }

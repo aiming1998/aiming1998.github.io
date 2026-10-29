@@ -45,6 +45,7 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory site
 - ARM 官方条目：https://openaccess.thecvf.com/content/CVPR2026W/GigaBrainChallenge/html/Mao_ARM_Advantage_Reward_Modeling_for_Long-Horizon_Manipulation_CVPRW_2026_paper.html 。
 - ARM 99.4% 指标限定为项目页报告的 GR00T N1.5 + ARM（AW-BC）长时程叠毛巾实验：https://aiming1998.github.io/ARM/ 。
 - ARM 缩略图：https://aiming1998.github.io/ARM/video/0109-poster.jpg 。
+- ARM 代码已在 FluxVLA 开源：https://github.com/FluxVLA/FluxVLA ，使用说明：https://github.com/FluxVLA/FluxVLA/blob/main/docs/arm.md 。
 - CTRL 论文与作者顺序：https://arxiv.org/abs/2304.12315 。Oral 标记由官方会议手册和第一作者主页交叉核实。
 - CTRL 官方代码：https://github.com/tusen-ai/SST 。缩略图：https://lue.fan/images/ctrl_teaser.png 。
 - 主页仅标注论文作者身份，未推断个人负责模块、学历、任职起始时间或未提供的联系方式。
