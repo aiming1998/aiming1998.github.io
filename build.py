@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build a dependency-free, bilingual static portfolio from content.json."""
 import argparse
+import hashlib
 import html
 import json
 import shutil
@@ -49,6 +50,8 @@ if args.publish:
 
 OUT.mkdir(exist_ok=True)
 shutil.copytree(ROOT / "assets", OUT / "assets", dirs_exist_ok=True)
+style_version = hashlib.sha256((ROOT / "assets/style.css").read_bytes()).hexdigest()[:12]
+script_version = hashlib.sha256((ROOT / "assets/site.js").read_bytes()).hexdigest()[:12]
 
 labels = {
     "en": {
@@ -162,7 +165,7 @@ for lang, text in labels.items():
 <title>{esc(tr(data.get('page_title', name),lang))}</title>
 <meta name="description" content="{esc(intro)}">
 <meta property="og:title" content="{esc(name)}"><meta property="og:description" content="{esc(intro)}"><meta property="og:type" content="website">
-{canonical}<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css"><script src="assets/site.js" defer></script>
+{canonical}<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css?v={style_version}"><script src="assets/site.js?v={script_version}" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">{esc(text['skip'])}</a>
