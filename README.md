@@ -48,3 +48,6 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory site
 - CTRL 论文与作者顺序：https://arxiv.org/abs/2304.12315 。Oral 标记由官方会议手册和第一作者主页交叉核实。
 - CTRL 官方代码：https://github.com/tusen-ai/SST 。缩略图：https://lue.fan/images/ctrl_teaser.png 。
 - 主页仅标注论文作者身份，未推断个人负责模块、学历、任职起始时间或未提供的联系方式。
+- 用户随后提供了清华联合培养硕士背景、小米汽车和图森未来实习、地平线与逐际动力经历、指导关系，以及在破壳的数据负责人和预训练职责。主页按本人自述整理，不补写任职年份或学位授予单位。
+- FluxVLA Engine：https://arxiv.org/html/2609.17210v1 ，论文署名含 Yiming Mao（第 10 作者）；公开状态为 arXiv 技术报告。主页作者列表用省略号缩写，论文入口指向最新摘要页。
+- FluxVLA 官方代码与框架图：https://github.com/FluxVLA/FluxVLA 、https://raw.githubusercontent.com/FluxVLA/FluxVLA/main/assets/framework.png 。

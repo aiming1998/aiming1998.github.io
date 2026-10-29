@@ -141,7 +141,7 @@ for lang, text in labels.items():
 <title>{esc(tr(data.get('page_title', name),lang))}</title>
 <meta name="description" content="{esc(intro)}">
 <meta property="og:title" content="{esc(name)}"><meta property="og:description" content="{esc(intro)}"><meta property="og:type" content="website">
-{canonical}<link rel="stylesheet" href="assets/style.css"><script src="assets/site.js" defer></script>
+{canonical}<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css"><script src="assets/site.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">{esc(text['skip'])}</a>
