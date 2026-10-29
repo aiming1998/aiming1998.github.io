@@ -87,7 +87,7 @@ for lang, text in labels.items():
     role = tr(profile["role"], lang)
     intro = tr(profile["intro"], lang)
     social = []
-    for key, label in [("email", text["email"]), ("github", "GitHub"), ("scholar", "Scholar"), ("linkedin", "LinkedIn"), ("cv", text["cv"])]:
+    for key, label in [("email", text["email"]), ("github", "GitHub"), ("zhihu", "知乎" if lang == "zh" else "Zhihu"), ("scholar", "Scholar"), ("linkedin", "LinkedIn"), ("cv", text["cv"])]:
         value = profile.get(key)
         if value:
             social.append(link("mailto:" + value if key == "email" else value, label))
