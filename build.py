@@ -128,11 +128,13 @@ for lang, text in labels.items():
         company = link(item['url'], tr(item['title'], lang)) if item.get('url') else esc(tr(item['title'], lang))
         description = tr(item.get('description', ''), lang)
         detail = f'<p class="experience-description">{esc(description)}</p>' if description else ''
+        experience_links = ''.join(link(entry['url'], tr(entry['label'], lang)) for entry in item.get('links', []))
+        resources = f'<div class="experience-links">{experience_links}</div>' if experience_links else ''
         current = ' experience-current' if item.get('current') else ''
         experience_items.append(f'''<article class="experience{current}" id="experience-{esc(item['id'])}">
           <div class="company-logo company-logo-{esc(item['id'])}"><img src="{safe_url(item['logo'])}" alt="" aria-hidden="true" loading="lazy"></div>
           <div class="experience-copy"><div class="experience-heading"><h3>{company}</h3><span class="experience-period">{esc(tr(item['period'],lang))}</span></div>
-          <p class="experience-role">{esc(tr(item['role'],lang))}</p>{detail}</div></article>''')
+          <p class="experience-role">{esc(tr(item['role'],lang))}</p>{detail}{resources}</div></article>''')
     experience = ''.join(experience_items)
     if not experience:
         experience = f'<div class="empty"><h3>{esc(text["about_empty"])}</h3><p>{esc(text["about_desc"])}</p></div>'

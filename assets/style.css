@@ -65,7 +65,7 @@ h3 { font-size:19px; line-height:1.35; font-weight:600; letter-spacing:-.25px; m
 .detail { display:grid; grid-template-columns:98px minmax(0,1fr); gap:10px; font-size:12px; margin:5px 0; line-height:1.65; }
 .detail dt { color:#343e48; font-weight:500; }
 .detail dd { margin:0; color:#68717a; }
-.project-links { display:flex; gap:18px; flex-wrap:wrap; font-size:13px; margin-top:13px; }
+.project-links,.experience-links { display:flex; gap:18px; flex-wrap:wrap; font-size:13px; margin-top:13px; }
 .empty { padding:30px 0 64px; max-width:640px; }
 .empty h3 { font-weight:500; font-size:23px; margin-bottom:12px; }
 .empty p { color:var(--muted); font-size:15px; }
