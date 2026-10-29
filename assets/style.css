@@ -71,9 +71,18 @@ h3 { font-size:19px; line-height:1.35; font-weight:600; letter-spacing:-.25px; m
 .software-item { padding:22px 0; border-bottom:1px solid var(--line); }
 .software-item h3 { margin:0 0 6px; }
 .software-item p { font-size:14px; color:var(--muted); margin:0; }
-.experience { display:grid; grid-template-columns:130px 1fr; gap:24px; padding:20px 0; border-bottom:1px solid var(--line); }
-.experience time { color:var(--muted); font-size:13px; }
-.experience p { margin:4px 0 0; font-size:14px; color:var(--muted); }
+.experience { display:grid; grid-template-columns:110px minmax(0,1fr); gap:28px; padding:25px 0; border-bottom:1px solid var(--line); break-inside:avoid; }
+.company-logo { display:flex; align-items:center; justify-content:center; width:110px; height:70px; padding:10px; background:#f8f9fa; border-radius:5px; }
+.company-logo img { display:block; width:100%; height:100%; object-fit:contain; }
+.company-logo-tusimple { background:#fff; }
+.experience-heading { display:flex; align-items:baseline; justify-content:space-between; gap:16px; }
+.experience-heading h3 { margin:0; font-size:18px; }
+.experience-heading h3 a { color:var(--ink); }
+.experience-period { flex-shrink:0; color:var(--muted); font-size:11px; }
+.experience-current .experience-period { color:var(--blue); }
+.experience-role { margin:5px 0 0; font-size:13px; color:var(--blue); }
+.experience-description { margin:9px 0 0; font-size:14px; line-height:1.75; color:#626b75; }
+.experience-note { margin:20px 0 30px; max-width:700px; color:var(--muted); font-size:12px; line-height:1.75; }
 .contact { display:flex; justify-content:space-between; align-items:center; gap:24px; padding:10px 0 36px; }
 .contact h2 { font-size:21px; font-weight:500; letter-spacing:-.3px; margin:0 0 6px; }
 .contact p { color:var(--muted); font-size:13px; margin:0; }
@@ -88,3 +97,4 @@ footer a { color:inherit; }
 @media (max-width:720px) { .portrait-frame { --portrait-height:220px; } }
 @media (max-width:520px) { .portrait-frame { --portrait-height:164px; } .alternate-name { font-size:15px; } }
 @media (max-width:640px) { .education-grid { grid-template-columns:1fr; gap:22px; } .education { padding-top:20px; margin-bottom:14px; } }
+@media (max-width:520px) { .experience { grid-template-columns:72px minmax(0,1fr); gap:16px; padding:22px 0; } .company-logo { width:72px; height:58px; padding:8px; } .experience-heading { display:block; } .experience-heading h3 { font-size:16px; line-height:1.5; } .experience-period { display:inline-block; margin-top:4px; } .experience-description { font-size:13px; } }

@@ -55,3 +55,15 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory site
 - 湖南大学校徽来源：https://100.hnu.edu.cn/bsxz1/bsxz.htm 的官方素材包 https://100.hnu.edu.cn/xiaohuixiaoming.zip ，使用其中 `bsxz/8cdd90f3c7a47e7a7fc6e27975a9935f.jpg` 的独立校徽，原样保存为 `assets/hunan.jpg`。
 - FluxVLA Engine：https://arxiv.org/html/2609.17210v1 ，论文署名含 Yiming Mao（第 10 作者）；公开状态为 arXiv 技术报告。主页作者列表用省略号缩写，论文入口指向最新摘要页。
 - FluxVLA 官方代码与框架图：https://github.com/FluxVLA/FluxVLA 、https://raw.githubusercontent.com/FluxVLA/FluxVLA/main/assets/framework.png 。
+
+## 职业经历与公司标识
+
+五家公司分别展示；破壳标为当前，小米汽车与图森未来标为实习。研究方向不作为未确认的正式职级，不补写任职年份。闫岩、王峰、王乃岩的指导关系放在两段实习共用说明中，不推断各自所属公司。
+
+标识作为经历识别使用，素材保留原样：
+
+- PokeBot：从 https://pokebot.com/ 导航中的第一枚 `viewBox="0 0 141 84"` 内联 SVG 提取为 `assets/pokebot.svg`。
+- 逐际动力：从 https://www.limxdynamics.com/en 页脚的独立符号 SVG 提取为 `assets/limx.svg`。
+- 地平线：https://www.horizon.auto/favicon.png 实际为 ICO，原样提取其中的 256×256 PNG 字节，保存为 `assets/horizon.png`。
+- 小米汽车：https://www.xiaomiauto.com/global 官方 CDN 标识 https://g-s1.xiaomiauto.com/xiaomiauto-com-global-assets/images/0815/icons/header/xiaomi-logo.svg ，保存为 `assets/xiaomi.svg`。
+- 图森未来：采用历史 TuSimple 标识，来源为 Goodyear 与 TuSimple 的官方合作公告 https://www.prnewswire.com/news-releases/goodyear-and-tusimple-collaborate-on-autonomous-vehicle-freight-operations-301175138.html ，原图 https://mma.prnewswire.com/media/1335812/TuSimple.jpg?p=original ，保存为 `assets/tusimple.jpg`。

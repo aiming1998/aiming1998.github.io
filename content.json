@@ -251,71 +251,109 @@
   ],
   "experience": [
     {
+      "id": "pokebot",
+      "current": true,
       "period": {
         "en": "Current",
         "zh": "当前"
       },
       "title": {
-        "en": "Pokebot · Data Lead & Algorithm Expert",
-        "zh": "破壳 Pokebot · 数据负责人 / 算法专家"
+        "en": "PokeBot",
+        "zh": "破壳机器人 PokeBot"
+      },
+      "role": {
+        "en": "Data Lead & Algorithm Expert",
+        "zh": "数据负责人 / 算法专家"
       },
       "description": {
         "en": "Responsible for embodied foundation-model pretraining and data. Collaborating with Huazhe Xu on research and development.",
         "zh": "负责具身大模型预训练与数据工作，与许华哲共同参与研发。"
-      }
+      },
+      "url": "https://www.pokebot.com/",
+      "logo": "assets/pokebot.svg"
     },
     {
+      "id": "limx",
       "period": {
         "en": "Previously",
         "zh": "此前"
       },
       "title": {
         "en": "LimX Dynamics",
-        "zh": "逐际动力"
+        "zh": "逐际动力 LimX Dynamics"
+      },
+      "role": {
+        "en": "Embodied AI & Robot Learning",
+        "zh": "具身智能与机器人学习"
       },
       "description": {
         "en": "Worked on FluxVLA and ARM, reinforcement learning, and humanoid loco-manipulation.",
         "zh": "参与 FluxVLA、ARM 开源项目，以及强化学习、人形机器人移动操作（loco-manipulation）相关工作。"
-      }
+      },
+      "logo": "assets/limx.svg",
+      "url": "https://www.limxdynamics.com/en"
     },
     {
+      "id": "horizon",
       "period": {
         "en": "Previously",
         "zh": "此前"
       },
       "title": {
         "en": "Horizon Robotics",
-        "zh": "地平线"
+        "zh": "地平线 Horizon Robotics"
+      },
+      "role": {
+        "en": "Autonomous-driving Algorithm Research",
+        "zh": "自动驾驶算法研究"
       },
       "description": {
         "en": "Worked on general perception, occupancy, stereo vision, world models, and end-to-end driving. Mentored by Xuewu Lin.",
         "zh": "从事泛感知算法、occupancy、双目立体视觉（stereo）、世界模型与端到端自动驾驶相关工作，mentor 为林学武。"
-      }
+      },
+      "logo": "assets/horizon.png",
+      "url": "https://www.horizon.auto/"
     },
     {
+      "id": "xiaomi",
       "period": {
-        "en": "Internships",
-        "zh": "实习经历"
+        "en": "Internship",
+        "zh": "实习"
       },
       "title": {
-        "en": "Xiaomi EV · TuSimple",
-        "zh": "小米汽车 · 图森未来"
+        "en": "Xiaomi EV",
+        "zh": "小米汽车 Xiaomi EV"
+      },
+      "role": {
+        "en": "Autonomous-driving Algorithm Research",
+        "zh": "自动驾驶算法研究"
       },
       "description": {
-        "en": "Autonomous-driving algorithm research, with guidance from Yan Yan, Feng Wang, and Naiyan Wang.",
-        "zh": "从事自动驾驶算法研究，曾受到闫岩、王峰、王乃岩的指导。"
-      }
+        "en": "",
+        "zh": ""
+      },
+      "logo": "assets/xiaomi.svg",
+      "url": "https://www.xiaomiauto.com/global"
     },
     {
+      "id": "tusimple",
       "period": {
-        "en": "Publications",
-        "zh": "论文署名"
+        "en": "Internship",
+        "zh": "实习"
       },
-      "title": "Yiming Mao",
+      "title": {
+        "en": "TuSimple",
+        "zh": "图森未来 TuSimple"
+      },
+      "role": {
+        "en": "Autonomous-driving Algorithm Research",
+        "zh": "自动驾驶算法研究"
+      },
       "description": {
-        "en": "Also known as Aiming / 毛一鸣. Selected publications include ARM, FluxVLA Engine, and CTRL.",
-        "zh": "英文名 Aiming，中文名毛一鸣。代表工作包括 ARM、FluxVLA Engine 和 CTRL。"
-      }
+        "en": "",
+        "zh": ""
+      },
+      "logo": "assets/tusimple.jpg"
     }
   ],
   "education": [
@@ -353,5 +391,9 @@
         "zh": "由智能网联汽车课题组李克强团队的高铭老师联合指导。"
       }
     }
-  ]
+  ],
+  "experience_note": {
+    "en": "During my internships at Xiaomi EV and TuSimple, I received guidance from Yan Yan, Feng Wang, and Naiyan Wang.",
+    "zh": "在小米汽车与图森未来实习期间，曾受到闫岩、王峰、王乃岩的指导。"
+  }
 }

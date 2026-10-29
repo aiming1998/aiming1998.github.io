@@ -55,11 +55,11 @@ labels = {
         "lang": "en", "switch": "中文", "switch_file": "zh.html", "edition": "PERSONAL WEBSITE",
         "skip": "Skip to content", "photo": "Portrait to be added", "caption": "Your portrait will appear here.",
         "draft": "Layout preview · Personal information, project details, and photo are waiting to be added.",
-        "tabs": ["Highlights", "Resources", "About"], "selected": "Selected publications", "selected_note": "Robotics · Reward modeling · 3D perception",
+        "tabs": ["Highlights", "Resources", "Experience"], "selected": "Selected publications", "selected_note": "Robotics · Reward modeling · 3D perception",
         "contribution": "My contribution", "result": "Evidence & result", "visual": "PROJECT VISUAL", "sample": "CONTENT PLACEHOLDER",
         "software_title": "Code & project resources", "software_empty": "A home for useful, reusable work.",
         "software_desc": "Selected repositories will appear here, with the problem each solves and my role in the work.",
-        "about_title": "Background & current focus", "about_empty": "A little more about me.", "education_title": "Education",
+        "about_title": "Professional experience", "about_empty": "A little more about me.", "education_title": "Education",
         "about_desc": "Education, professional experience, and current interests will be added once the details are confirmed.",
         "contact": "Let’s connect.", "contact_desc": "For conversations about embodied AI, research, and collaboration.",
         "contact_pending": "Contact details to be added", "email": "Email", "cv": "CV", "updated": "Updated", "draft_footer": "Draft · Not published",
@@ -68,11 +68,11 @@ labels = {
         "lang": "zh-CN", "switch": "English", "switch_file": "index.html", "edition": "个人主页",
         "skip": "跳转到正文", "photo": "个人照片待补充", "caption": "这里将放置你的个人照片。",
         "draft": "版式预览 · 个人信息、项目细节与照片待补充，示例文案不代表真实履历。",
-        "tabs": ["代表工作", "代码与资源", "关于我"], "selected": "精选论文", "selected_note": "机器人 · 奖励建模 · 三维感知",
+        "tabs": ["代表工作", "代码与资源", "职业经历"], "selected": "精选论文", "selected_note": "机器人 · 奖励建模 · 三维感知",
         "contribution": "我的贡献", "result": "结果与证据", "visual": "项目图片待补充", "sample": "内容占位",
         "software_title": "代码与项目资源", "software_empty": "让有用的工作被更多人使用。",
         "software_desc": "这里将展示精选代码仓库，说明它们解决的问题，以及我在其中的具体贡献。",
-        "about_title": "背景与当前方向", "about_empty": "关于我的更多信息。", "education_title": "教育背景",
+        "about_title": "职业经历", "about_empty": "关于我的更多信息。", "education_title": "教育背景",
         "about_desc": "教育背景、工作经历和当前关注的方向，将在信息确认后补充。",
         "contact": "保持联系。", "contact_desc": "欢迎交流具身智能、技术研究与合作。",
         "contact_pending": "联系方式待补充", "email": "邮件", "cv": "简历", "updated": "更新于", "draft_footer": "草稿 · 尚未发布",
@@ -120,9 +120,21 @@ for lang, text in labels.items():
     software = "".join(f'<article class="software-item"><h3>{link(item["url"],tr(item["name"],lang))}</h3><p>{esc(tr(item["description"],lang))}</p></article>' for item in data["software"])
     if not software:
         software = f'<div class="empty"><h3>{esc(text["software_empty"])}</h3><p>{esc(text["software_desc"])}</p></div>'
-    experience = "".join(f'<article class="experience"><time>{esc(tr(item["period"],lang))}</time><div><h3>{esc(tr(item["title"],lang))}</h3><p>{esc(tr(item["description"],lang))}</p></div></article>' for item in data["experience"])
+    experience_items = []
+    for item in data["experience"]:
+        company = link(item['url'], tr(item['title'], lang)) if item.get('url') else esc(tr(item['title'], lang))
+        description = tr(item.get('description', ''), lang)
+        detail = f'<p class="experience-description">{esc(description)}</p>' if description else ''
+        current = ' experience-current' if item.get('current') else ''
+        experience_items.append(f'''<article class="experience{current}" id="experience-{esc(item['id'])}">
+          <div class="company-logo company-logo-{esc(item['id'])}"><img src="{safe_url(item['logo'])}" alt="" aria-hidden="true" loading="lazy"></div>
+          <div class="experience-copy"><div class="experience-heading"><h3>{company}</h3><span class="experience-period">{esc(tr(item['period'],lang))}</span></div>
+          <p class="experience-role">{esc(tr(item['role'],lang))}</p>{detail}</div></article>''')
+    experience = ''.join(experience_items)
     if not experience:
         experience = f'<div class="empty"><h3>{esc(text["about_empty"])}</h3><p>{esc(text["about_desc"])}</p></div>'
+    if data.get('experience_note'):
+        experience += f'<p class="experience-note">{esc(tr(data["experience_note"],lang))}</p>'
     education_items = []
     for item in data.get("education", []):
         description = tr(item.get("description", ""), lang)
