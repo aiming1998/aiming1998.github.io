@@ -28,8 +28,8 @@
       "zh": "我在破壳担任数据负责人和算法专家，负责具身大模型预训练与数据工作，并与许华哲共同参与研发。"
     },
     "focus": {
-      "en": "My work spans autonomous driving and robotics, with a focus on data, perception, and model training. I publish as Yiming Mao.",
-      "zh": "我的研究经历覆盖自动驾驶与机器人，关注数据、感知和模型训练。论文署名为 Yiming Mao。"
+      "en": "My work spans autonomous driving and robotics, with a focus on data, perception, and model training.",
+      "zh": "我的研究经历覆盖自动驾驶与机器人，关注数据、感知和模型训练。"
     },
     "photo": "assets/portrait.jpg",
     "photo_rotation": -90,
