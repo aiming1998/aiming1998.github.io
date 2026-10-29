@@ -15,7 +15,7 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory site
 
 ## 更新内容
 
-修改 `content.json` 后重新运行 `python3 build.py`。文字字段支持 `en` / `zh`。姓名、当前身份、简介和方向放在 `profile`；项目放在 `projects`；开源软件与经历分别放在 `software` 和 `experience`。
+修改 `content.json` 后重新运行 `python3 build.py`。文字字段支持 `en` / `zh`。姓名、当前身份、简介和方向放在 `profile`；项目放在 `projects`；教育背景放在 `education`；开源软件与经历分别放在 `software` 和 `experience`。
 
 个人照片位于 `assets/portrait.jpg`。原始照片保持原样，通过页面 CSS 逆时针旋转 90 度并裁切为头像区。替换正向照片时，删除 `profile.photo_rotation` 或设为 `0`。项目图片和简历也放在 `assets/`。不要把 GitHub fork 当作原创贡献。
 
@@ -48,6 +48,9 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory site
 - CTRL 论文与作者顺序：https://arxiv.org/abs/2304.12315 。Oral 标记由官方会议手册和第一作者主页交叉核实。
 - CTRL 官方代码：https://github.com/tusen-ai/SST 。缩略图：https://lue.fan/images/ctrl_teaser.png 。
 - 主页仅标注论文作者身份，未推断个人负责模块、学历、任职起始时间或未提供的联系方式。
-- 用户随后提供了清华联合培养硕士背景、小米汽车和图森未来实习、地平线与逐际动力经历、指导关系，以及在破壳的数据负责人和预训练职责。主页按本人自述整理，不补写任职年份或学位授予单位。
+- 工作与指导关系按用户本人自述整理：小米汽车和图森未来实习、地平线与逐际动力经历，以及在破壳的数据负责人和预训练职责；不补写任职年份。
+- 教育背景按用户补充更新为：湖南大学自动驾驶方向硕士研究生；同时在清华大学智能网联汽车课题组、李克强团队下由高铭老师联合指导。页面分别标注研究生身份和联合培养关系，不推断入学或毕业年份。
+- 清华大学校徽来源：https://vi.tsinghua.edu.cn/gk/xxbz/xh/bzjbzsy.htm 。原图保存为 `assets/tsinghua.jpg`，仅使用 CSS 隐藏四周留白，不改动徽章。
+- 湖南大学校徽来源：https://100.hnu.edu.cn/bsxz1/bsxz.htm 的官方素材包 https://100.hnu.edu.cn/xiaohuixiaoming.zip ，使用其中 `bsxz/8cdd90f3c7a47e7a7fc6e27975a9935f.jpg` 的独立校徽，原样保存为 `assets/hunan.jpg`。
 - FluxVLA Engine：https://arxiv.org/html/2609.17210v1 ，论文署名含 Yiming Mao（第 10 作者）；公开状态为 arXiv 技术报告。主页作者列表用省略号缩写，论文入口指向最新摘要页。
 - FluxVLA 官方代码与框架图：https://github.com/FluxVLA/FluxVLA 、https://raw.githubusercontent.com/FluxVLA/FluxVLA/main/assets/framework.png 。

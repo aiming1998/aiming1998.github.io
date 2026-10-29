@@ -59,7 +59,7 @@ labels = {
         "contribution": "My contribution", "result": "Evidence & result", "visual": "PROJECT VISUAL", "sample": "CONTENT PLACEHOLDER",
         "software_title": "Code & project resources", "software_empty": "A home for useful, reusable work.",
         "software_desc": "Selected repositories will appear here, with the problem each solves and my role in the work.",
-        "about_title": "Background & current focus", "about_empty": "A little more about me.",
+        "about_title": "Background & current focus", "about_empty": "A little more about me.", "education_title": "Education",
         "about_desc": "Education, professional experience, and current interests will be added once the details are confirmed.",
         "contact": "Let’s connect.", "contact_desc": "For conversations about embodied AI, research, and collaboration.",
         "contact_pending": "Contact details to be added", "email": "Email", "cv": "CV", "updated": "Updated", "draft_footer": "Draft · Not published",
@@ -72,7 +72,7 @@ labels = {
         "contribution": "我的贡献", "result": "结果与证据", "visual": "项目图片待补充", "sample": "内容占位",
         "software_title": "代码与项目资源", "software_empty": "让有用的工作被更多人使用。",
         "software_desc": "这里将展示精选代码仓库，说明它们解决的问题，以及我在其中的具体贡献。",
-        "about_title": "背景与当前方向", "about_empty": "关于我的更多信息。",
+        "about_title": "背景与当前方向", "about_empty": "关于我的更多信息。", "education_title": "教育背景",
         "about_desc": "教育背景、工作经历和当前关注的方向，将在信息确认后补充。",
         "contact": "保持联系。", "contact_desc": "欢迎交流具身智能、技术研究与合作。",
         "contact_pending": "联系方式待补充", "email": "邮件", "cv": "简历", "updated": "更新于", "draft_footer": "草稿 · 尚未发布",
@@ -123,6 +123,15 @@ for lang, text in labels.items():
     experience = "".join(f'<article class="experience"><time>{esc(tr(item["period"],lang))}</time><div><h3>{esc(tr(item["title"],lang))}</h3><p>{esc(tr(item["description"],lang))}</p></div></article>' for item in data["experience"])
     if not experience:
         experience = f'<div class="empty"><h3>{esc(text["about_empty"])}</h3><p>{esc(text["about_desc"])}</p></div>'
+    education_items = []
+    for item in data.get("education", []):
+        description = tr(item.get("description", ""), lang)
+        detail = f'<p class="education-detail">{esc(description)}</p>' if description else ''
+        education_items.append(f'''<article class="education-item">
+          <div class="institution-logo institution-logo-{esc(item['id'])}"><img src="{safe_url(item['logo'])}" alt="" aria-hidden="true"></div>
+          <div><h3>{link(item['url'], tr(item['name'], lang))}</h3><p class="education-role">{esc(tr(item['role'],lang))}</p>{detail}</div>
+        </article>''')
+    education = f'<section class="education" aria-labelledby="education-title"><h2 id="education-title">{esc(text["education_title"])}</h2><div class="education-grid">{"".join(education_items)}</div></section>' if education_items else ''
     tabs = "".join(f'<a class="tab" id="tab-{key}" href="#{key}">{esc(label)}</a>' for key,label in zip(["highlights","software","about"],text["tabs"]))
     contact = link("mailto:" + profile["email"], text["email"] + " ↗") if profile.get("email") else (link(profile["github"], "GitHub ↗") if profile.get("github") else f'<span class="edition">{esc(text["contact_pending"])}</span>')
     filename = "index.html" if lang == "en" else "zh.html"
@@ -151,6 +160,7 @@ for lang, text in labels.items():
     <div class="hero-copy"><h1>{esc(name)}{alternate_name}</h1><p class="role">{esc(role)}</p><p class="intro">{esc(intro)}</p><p class="bio">{esc(tr(profile['bio'],lang))}</p><p class="focus">{esc(tr(profile['focus'],lang))}</p><nav class="social" aria-label="{'Profile links' if lang=='en' else '个人链接'}">{''.join(social)}</nav></div>
     <figure class="portrait">{portrait}<figcaption>{esc(text['caption']) if not profile.get('photo') else ''}</figcaption></figure>
   </header>
+  {education}
   {draft_note}
   <main id="main">
     <nav class="tabs" aria-label="{'Explore my work' if lang=='en' else '浏览我的工作'}">{tabs}</nav>

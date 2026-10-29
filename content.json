@@ -28,8 +28,8 @@
       "zh": "我在破壳担任数据负责人和算法专家，负责具身大模型预训练与数据工作，并与许华哲共同参与研发。"
     },
     "focus": {
-      "en": "My background includes joint master’s training at Tsinghua University and algorithm research in autonomous driving and robotics. I publish as Yiming Mao.",
-      "zh": "我有清华大学联合培养硕士背景，此前从事自动驾驶与机器人算法研究。论文署名为 Yiming Mao。"
+      "en": "My work spans autonomous driving and robotics, with a focus on data, perception, and model training. I publish as Yiming Mao.",
+      "zh": "我的研究经历覆盖自动驾驶与机器人，关注数据、感知和模型训练。论文署名为 Yiming Mao。"
     },
     "photo": "assets/portrait.jpg",
     "photo_rotation": -90,
@@ -301,20 +301,6 @@
     },
     {
       "period": {
-        "en": "Education",
-        "zh": "教育背景"
-      },
-      "title": {
-        "en": "Joint master’s training · Tsinghua University",
-        "zh": "清华大学联合培养硕士"
-      },
-      "description": {
-        "en": "Joint training in mechanical and vehicle engineering.",
-        "zh": "机械、车辆与运载相关方向联合培养。"
-      }
-    },
-    {
-      "period": {
         "en": "Publications",
         "zh": "论文署名"
       },
@@ -322,6 +308,42 @@
       "description": {
         "en": "Also known as Aiming / 毛一鸣. Selected publications include ARM, FluxVLA Engine, and CTRL.",
         "zh": "英文名 Aiming，中文名毛一鸣。代表工作包括 ARM、FluxVLA Engine 和 CTRL。"
+      }
+    }
+  ],
+  "education": [
+    {
+      "id": "hunan",
+      "name": {
+        "en": "Hunan University",
+        "zh": "湖南大学"
+      },
+      "url": "https://www.hnu.edu.cn/",
+      "logo": "assets/hunan.jpg",
+      "role": {
+        "en": "Master’s student · Autonomous driving",
+        "zh": "硕士研究生 · 自动驾驶方向"
+      },
+      "description": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "tsinghua",
+      "name": {
+        "en": "Tsinghua University",
+        "zh": "清华大学"
+      },
+      "url": "https://www.tsinghua.edu.cn/",
+      "logo": "assets/tsinghua.jpg",
+      "role": {
+        "en": "Joint master’s training",
+        "zh": "硕士联合培养"
+      },
+      "description": {
+        "en": "Co-advised by Ming Gao in Keqiang Li’s Intelligent and Connected Vehicles research group.",
+        "zh": "由智能网联汽车课题组李克强团队的高铭老师联合指导。"
       }
     }
   ]
