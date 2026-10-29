@@ -350,8 +350,8 @@
         "zh": "自动驾驶算法研究"
       },
       "description": {
-        "en": "",
-        "zh": ""
+        "en": "During my internship at TuSimple, I received guidance from Yan Yan, Feng Wang, and Naiyan Wang.",
+        "zh": "在图森未来实习期间，曾受到闫岩、王峰、王乃岩的指导。"
       },
       "logo": "assets/tusimple.jpg"
     }
@@ -399,9 +399,5 @@
         "zh": "李克强院士团队"
       }
     }
-  ],
-  "experience_note": {
-    "en": "During my internships at Xiaomi EV and TuSimple, I received guidance from Yan Yan, Feng Wang, and Naiyan Wang.",
-    "zh": "在小米汽车与图森未来实习期间，曾受到闫岩、王峰、王乃岩的指导。"
-  }
+  ]
 }
