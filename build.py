@@ -33,7 +33,7 @@ def safe_url(value):
     return esc(value)
 
 def link(url, label, extra=""):
-    external = ' target="_blank" rel="noopener noreferrer"' if url.startswith("https://") else ""
+    external = ' target="_blank" rel="noopener noreferrer"' if url.startswith(("https://", "http://")) else ""
     return f'<a href="{safe_url(url)}"{external}{extra}>{esc(label)}</a>'
 
 if args.publish:
@@ -86,6 +86,10 @@ for lang, text in labels.items():
     name = tr(profile["name"], lang)
     role = tr(profile["role"], lang)
     intro = tr(profile["intro"], lang)
+    bio = esc(tr(profile["bio"], lang))
+    for reference in profile.get("bio_links", []):
+        label = tr(reference["label"], lang)
+        bio = bio.replace(esc(label), link(reference["url"], label), 1)
     social = []
     for key, label in [("email", text["email"]), ("github", "GitHub"), ("zhihu", "知乎" if lang == "zh" else "Zhihu"), ("x", "X"), ("scholar", "谷歌学术" if lang == "zh" else "Google Scholar"), ("linkedin", "LinkedIn"), ("cv", text["cv"])]:
         value = profile.get(key)
@@ -106,6 +110,7 @@ for lang, text in labels.items():
             visual = f'<div class="placeholder-visual" role="img" aria-label="{esc(text["visual"])}"><b>{esc(project["year"])}</b><span>{esc(text["visual"])}</span></div>'
         project_links = "".join(link(item["url"], tr(item["label"], lang)) for item in project.get("links", []))
         badge = f'<span class="draft-label">{esc(text["sample"])}</span>' if project.get("draft") else ""
+        kind_class = ' project-kicker-highlight' if project.get('kind_highlight') else ''
         author_line = ''
         if project.get('authors'):
             author_list = ', '.join(f'<strong>{esc(author)}</strong>' if author == 'Yiming Mao' else esc(author) for author in project['authors'])
@@ -113,7 +118,7 @@ for lang, text in labels.items():
         role_label = tr(project.get('role_label', text['contribution']),lang)
         projects.append(f'''<article class="project" id="{esc(project['id'])}">
           <div class="project-visual">{visual}</div><div>
-          <p class="project-kicker">{esc(tr(project['kind'],lang))} {badge}</p>
+          <p class="project-kicker{kind_class}">{esc(tr(project['kind'],lang))} {badge}</p>
           <h3>{esc(tr(project['title'],lang))}</h3>
           {author_line}
           <p class="project-summary">{esc(tr(project['summary'],lang))}</p>
@@ -175,7 +180,7 @@ for lang, text in labels.items():
 <div class="page">
   <div class="utility"><span class="edition">{esc(text['edition'])}</span><a class="language" href="{text['switch_file']}" data-language="{text['switch_file']}" lang="{'zh-CN' if lang=='en' else 'en'}">{esc(text['switch'])}</a></div>
   <header class="hero">
-    <div class="hero-copy"><h1>{esc(name)}{alternate_name}</h1><p class="role">{esc(role)}</p><p class="intro">{esc(intro)}</p><p class="bio">{esc(tr(profile['bio'],lang))}</p><p class="focus">{esc(tr(profile['focus'],lang))}</p><nav class="social" aria-label="{'Profile links' if lang=='en' else '个人链接'}">{''.join(social)}</nav></div>
+    <div class="hero-copy"><h1>{esc(name)}{alternate_name}</h1><p class="role">{esc(role)}</p><p class="intro">{esc(intro)}</p><p class="bio">{bio}</p><p class="focus">{esc(tr(profile['focus'],lang))}</p><nav class="social" aria-label="{'Profile links' if lang=='en' else '个人链接'}">{''.join(social)}</nav></div>
     <figure class="portrait">{portrait}<figcaption>{esc(text['caption']) if not profile.get('photo') else ''}</figcaption></figure>
   </header>
   {education}

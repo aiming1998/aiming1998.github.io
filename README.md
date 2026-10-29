@@ -48,6 +48,8 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory site
 - ARM 代码已在 FluxVLA 开源：https://github.com/FluxVLA/FluxVLA ，使用说明：https://github.com/FluxVLA/FluxVLA/blob/main/docs/arm.md 。
 - CTRL 论文与作者顺序：https://arxiv.org/abs/2304.12315 。Oral 标记由官方会议手册和第一作者主页交叉核实。
 - CTRL 官方代码：https://github.com/tusen-ai/SST 。缩略图：https://lue.fan/images/ctrl_teaser.png 。
+- CTRL 的 Waymo 检测与跟踪双任务 SOTA 为 2023 年论文报告结果，采用离线设置；依据 CVF 官方补充材料表 2（跟踪）与表 3（检测）：https://openaccess.thecvf.com/content/ICCV2023/supplemental/Fan_Once_Detected_Never_ICCV_2023_supplemental.pdf 。表 3 注明检测榜单结果截至 2023 年 3 月 8 日，跟踪表未单独标注截止日期；不表示当前榜单排名。
+- 个人介绍中的许华哲 / Huazhe Xu 链接由本人提供：http://hxu.rocks/ 。
 - 主页仅标注论文作者身份，未推断个人负责模块、学历、任职起始时间或未提供的联系方式。
 - 工作与指导关系按用户本人自述整理：小米汽车和图森未来实习、地平线与逐际动力经历，以及在破壳的数据负责人和预训练职责；不补写任职年份。
 - 教育背景按用户补充更新为：湖南大学自动驾驶方向硕士研究生；同时在清华大学智能网联汽车课题组、李克强团队下由高铭老师联合指导。页面分别标注研究生身份和联合培养关系，不推断入学或毕业年份。

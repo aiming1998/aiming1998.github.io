@@ -27,6 +27,15 @@
       "en": "I lead data work and embodied foundation-model pretraining at Pokebot, collaborating with Huazhe Xu on research and development.",
       "zh": "我在破壳担任数据负责人和算法专家，负责具身大模型预训练与数据工作，并与许华哲共同参与研发。"
     },
+    "bio_links": [
+      {
+        "label": {
+          "en": "Huazhe Xu",
+          "zh": "许华哲"
+        },
+        "url": "http://hxu.rocks/"
+      }
+    ],
     "focus": {
       "en": "My work spans autonomous driving and robotics, with a focus on data, perception, and model training.",
       "zh": "我的研究经历覆盖自动驾驶与机器人，关注数据、感知和模型训练。"
@@ -208,6 +217,7 @@
       "id": "ctrl",
       "draft": false,
       "year": "2023",
+      "kind_highlight": true,
       "kind": {
         "en": "ICCV 2023 · Oral",
         "zh": "ICCV 2023 · Oral"
@@ -235,8 +245,8 @@
         "zh": "共同作者"
       },
       "result": {
-        "en": "Evaluated on the Waymo Open Dataset. Full title: Once Detected, Never Lost: Surpassing Human Performance in Offline LiDAR based 3D Object Detection.",
-        "zh": "在 Waymo Open Dataset 上完成评测；完整论文题名与实验结果见下方论文链接。"
+        "en": "Achieved SOTA on both the Waymo Open Dataset 3D Detection and 3D Tracking leaderboards (2023 paper results, offline setting).",
+        "zh": "在 Waymo Open Dataset 的 3D Detection（检测）与 3D Tracking（跟踪）双赛道榜单达到 SOTA（2023 年论文报告结果，离线设置）。"
       },
       "image": "assets/ctrl.png",
       "links": [
@@ -260,6 +270,13 @@
             "zh": "使用说明"
           },
           "url": "https://github.com/tusen-ai/SST/blob/main/docs/CTRL_instructions.md"
+        },
+        {
+          "label": {
+            "en": "Leaderboard results",
+            "zh": "榜单结果"
+          },
+          "url": "https://openaccess.thecvf.com/content/ICCV2023/supplemental/Fan_Once_Detected_Never_ICCV_2023_supplemental.pdf"
         }
       ]
     }

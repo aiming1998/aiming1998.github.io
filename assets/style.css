@@ -57,6 +57,7 @@ h1 { margin:0 0 8px; font-size:42px; font-weight:600; letter-spacing:-1.3px; lin
 .placeholder-visual b { font-weight:400; font-size:40px; line-height:1; letter-spacing:-2px; color:#c0c7cf; }
 .placeholder-visual span { font-size:10px; letter-spacing:.1em; }
 .project-kicker { display:flex; align-items:center; gap:12px; color:var(--muted); font-size:11px; margin:0 0 7px; }
+.project-kicker-highlight { width:fit-content; padding:4px 10px; margin-bottom:11px; border:1px solid #ead29c; border-radius:4px; background:#fff5dd; color:#805315; font-size:12px; font-weight:700; letter-spacing:.02em; }
 .draft-label { font-size:10px; color:#7b8792; }
 h3 { font-size:19px; line-height:1.35; font-weight:600; letter-spacing:-.25px; margin:0 0 10px; }
 .project-summary { font-size:14px; margin:0 0 12px; color:#525963; line-height:1.65; }
