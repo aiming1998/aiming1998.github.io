@@ -142,9 +142,10 @@ for lang, text in labels.items():
     for item in data.get("education", []):
         description = tr(item.get("description", ""), lang)
         detail = f'<p class="education-detail">{esc(description)}</p>' if description else ''
+        team = f'<p class="education-team">{esc(tr(item["team"], lang))}</p>' if item.get('team') else ''
         education_items.append(f'''<article class="education-item">
           <div class="institution-logo institution-logo-{esc(item['id'])}"><img src="{safe_url(item['logo'])}" alt="" aria-hidden="true"></div>
-          <div><h3>{link(item['url'], tr(item['name'], lang))}</h3><p class="education-role">{esc(tr(item['role'],lang))}</p>{detail}</div>
+          <div><h3>{link(item['url'], tr(item['name'], lang))}</h3><p class="education-role">{esc(tr(item['role'],lang))}</p>{team}{detail}</div>
         </article>''')
     education = f'<section class="education" aria-labelledby="education-title"><h2 id="education-title">{esc(text["education_title"])}</h2><div class="education-grid">{"".join(education_items)}</div></section>' if education_items else ''
     tabs = "".join(f'<a class="tab" id="tab-{key}" href="#{key}">{esc(label)}</a>' for key,label in zip(["highlights","software","about"],text["tabs"]))

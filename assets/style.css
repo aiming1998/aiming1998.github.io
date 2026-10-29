@@ -39,6 +39,7 @@ h1 { margin:0 0 8px; font-size:42px; font-weight:600; letter-spacing:-1.3px; lin
 .education-item h3 { font-size:16px; margin:0 0 3px; font-weight:500; letter-spacing:0; }
 .education-item h3 a { color:var(--ink); }
 .education-role { margin:0; font-size:13px; color:#555d66; }
+.education-team { margin:7px 0 0; font-size:13px; line-height:1.65; font-weight:600; color:var(--ink); }
 .education-detail { margin:5px 0 0; font-size:12px; line-height:1.7; color:var(--muted); }
 .draft-note { margin:0 0 34px; padding:10px 14px; border-left:2px solid #bccad5; background:#f6f8fa; color:#65717d; font-size:12px; }
 .tabs { display:flex; gap:32px; border-bottom:1px solid var(--line); margin-bottom:30px; }

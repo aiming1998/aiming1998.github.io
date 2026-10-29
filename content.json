@@ -372,6 +372,10 @@
       "description": {
         "en": "",
         "zh": ""
+      },
+      "team": {
+        "en": "Research team of Academicians Zhihua Zhong and Rongjun Ding",
+        "zh": "钟志华院士、丁荣军院士团队"
       }
     },
     {
@@ -387,8 +391,12 @@
         "zh": "硕士联合培养"
       },
       "description": {
-        "en": "Co-advised by Ming Gao in Keqiang Li’s Intelligent and Connected Vehicles research group.",
-        "zh": "由智能网联汽车课题组李克强团队的高铭老师联合指导。"
+        "en": "Intelligent and Connected Vehicles research group; co-advised by Ming Gao.",
+        "zh": "智能网联汽车课题组，由高铭老师联合指导。"
+      },
+      "team": {
+        "en": "Research team of Academician Keqiang Li",
+        "zh": "李克强院士团队"
       }
     }
   ],

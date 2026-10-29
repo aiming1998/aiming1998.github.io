@@ -51,6 +51,7 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory site
 - 主页仅标注论文作者身份，未推断个人负责模块、学历、任职起始时间或未提供的联系方式。
 - 工作与指导关系按用户本人自述整理：小米汽车和图森未来实习、地平线与逐际动力经历，以及在破壳的数据负责人和预训练职责；不补写任职年份。
 - 教育背景按用户补充更新为：湖南大学自动驾驶方向硕士研究生；同时在清华大学智能网联汽车课题组、李克强团队下由高铭老师联合指导。页面分别标注研究生身份和联合培养关系，不推断入学或毕业年份。
+- 团队归属按用户进一步补充：湖南大学钟志华院士、丁荣军院士团队；清华大学李克强院士团队。团队归属单独突出展示，高铭老师联合指导单独说明；不把团队归属扩写为三位院士直接指导。湖南大学两位院士称谓可参考 https://mve.hnu.edu.cn/hdjxyyzgcxy/szdw/jslb.htm 。
 - 清华大学校徽来源：https://vi.tsinghua.edu.cn/gk/xxbz/xh/bzjbzsy.htm 。原图保存为 `assets/tsinghua.jpg`，仅使用 CSS 隐藏四周留白，不改动徽章。
 - 湖南大学校徽来源：https://100.hnu.edu.cn/bsxz1/bsxz.htm 的官方素材包 https://100.hnu.edu.cn/xiaohuixiaoming.zip ，使用其中 `bsxz/8cdd90f3c7a47e7a7fc6e27975a9935f.jpg` 的独立校徽，原样保存为 `assets/hunan.jpg`。
 - FluxVLA Engine：https://arxiv.org/html/2609.17210v1 ，论文署名含 Yiming Mao（第 10 作者）；公开状态为 arXiv 技术报告。主页作者列表用省略号缩写，论文入口指向最新摘要页。
