@@ -66,5 +66,5 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory site
 - PokeBot：从 https://pokebot.com/ 导航中的第一枚 `viewBox="0 0 141 84"` 内联 SVG 提取为 `assets/pokebot.svg`。
 - 逐际动力：使用官网原始红色标识 https://www.limxdynamics.com/favicon.ico?favicon.41f4bc48.ico ，原样保存为 `assets/limx-red.ico`。
 - 地平线：https://www.horizon.auto/favicon.png 实际为 ICO，原样提取其中的 256×256 PNG 字节，保存为 `assets/horizon.png`。
-- 小米汽车：https://www.xiaomiauto.com/global 官方 CDN 标识 https://g-s1.xiaomiauto.com/xiaomiauto-com-global-assets/images/0815/icons/header/xiaomi-logo.svg ，保存为 `assets/xiaomi.svg`。
+- 小米汽车：https://www.xiaomiauto.com/global 官方橙色标识 https://g-s1.xiaomiauto.com/xiaomiauto-com-global-assets/images/0815/home/logo-mi.png ，原样保存为 `assets/xiaomi-orange.png`。
 - 图森未来：采用历史 TuSimple 标识，来源为 Goodyear 与 TuSimple 的官方合作公告 https://www.prnewswire.com/news-releases/goodyear-and-tusimple-collaborate-on-autonomous-vehicle-freight-operations-301175138.html ，原图 https://mma.prnewswire.com/media/1335812/TuSimple.jpg?p=original ，保存为 `assets/tusimple.jpg`。
