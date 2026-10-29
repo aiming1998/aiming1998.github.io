@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="796" viewBox="0 0 1280 796" fill="#1f2733" role="img" aria-labelledby="t d">
+  <title id="t">LimX-VLA (V³-0) — Asynchronous Dual-GPU Humanoid VLA Architecture</title>
+  <desc id="d">Runtime architecture. Head and wrist cameras plus a language instruction feed the S2 vision-language model on GPU 1. The cameras also feed an independent visual module on GPU 2. S2 publishes the latest intent latent to the S1 action expert below 5 hertz. S1 combines that intent with visual features and robot state, then streams control targets to the S0 LimX Whole-Body Tracker at 50 hertz. S0 drives the 43-degree-of-freedom Oli humanoid directly at 1000 hertz. Vision and robot state stream back to the sensing rail, closing the loop.</desc>
+
+  <defs>
+    <radialGradient id="paper" cx="0.5" cy="0.18" r="1.1">
+      <stop offset="0" stop-color="#fbf7ec"/>
+      <stop offset="1" stop-color="#f2ecdd"/>
+    </radialGradient>
+    <linearGradient id="slab" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c2129"/>
+      <stop offset="1" stop-color="#1f2733"/>
+    </linearGradient>
+    <linearGradient id="bridge" x1="700" y1="0" x2="868" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4338ca"/>
+      <stop offset="1" stop-color="#e8590c"/>
+    </linearGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="13" cy="13" r="0.9" fill="#1f2733" opacity="0.05"/>
+    </pattern>
+
+    <marker id="a-ink" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="13" markerHeight="13" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#1f2733"/>
+    </marker>
+    <marker id="a-cobalt" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="13" markerHeight="13" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#4338ca"/>
+    </marker>
+    <marker id="a-verm" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="13" markerHeight="13" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#e8590c"/>
+    </marker>
+    <marker id="a-slate-s" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="13" markerHeight="13" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#5b6675"/>
+    </marker>
+    <marker id="a-brass" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="13" markerHeight="13" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#0b7285"/>
+    </marker>
+
+    <style>
+      .serif { font-family: "Palatino Linotype", Palatino, "URW Palladio L", "Book Antiqua", Georgia, serif; }
+      .sans  { font-family: "Avenir Next", Avenir, "Gill Sans", "Segoe UI", "Helvetica Neue", "DejaVu Sans", sans-serif; }
+      .mono  { font-family: "SF Mono", "Cascadia Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace; }
+      .soft  { fill: #5b6675; }
+      .cobalt{ fill: #4338ca; }
+      .verm  { fill: #c2410c; }
+      .brass { fill: #0b7285; }
+      .lite  { fill: #1f2733; }
+      .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; }
+      .line { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .wire { stroke: #1f2733; stroke-width: 2.25; }
+      .card { fill: #fffdf8; stroke: rgba(31,39,51,0.18); stroke-width: 1; }
+      .oli-motion,
+      .oli-robot-left-arm,
+      .oli-robot-right-arm,
+      .oli-robot-left-leg,
+      .oli-robot-right-leg { transform-box: view-box; }
+      .oli-robot-right-arm { transform-origin: 244px 741px; }
+      .oli-robot-left-arm  { transform-origin: 284px 741px; }
+      .oli-robot-right-leg { transform-origin: 258px 783px; }
+      .oli-robot-left-leg  { transform-origin: 270px 783px; }
+      @media (prefers-reduced-motion: no-preference) {
+        .flowline { animation: flow 3.2s linear infinite; }
+        .oli-motion          { animation: oli-bob 7s ease-in-out infinite; }
+        .oli-robot-left-arm  { animation: oli-robot-left-arm 7s ease-in-out infinite; }
+        .oli-robot-right-arm { animation: oli-robot-right-arm 7s ease-in-out infinite; }
+        .oli-robot-left-leg  { animation: oli-robot-left-leg 7s ease-in-out infinite; }
+        .oli-robot-right-leg { animation: oli-robot-right-leg 7s ease-in-out infinite; }
+        @keyframes flow { to { stroke-dashoffset: -32; } }
+        @keyframes oli-bob {
+          0%, 8%, 16%, 24%, 32%, 40%, 48%, 100% { transform: translateY(0); }
+          4%, 12%, 20%, 28%, 36%, 44% { transform: translateY(1.8px); }
+        }
+        @keyframes oli-robot-right-leg {
+          0%, 8%, 16%, 24%, 32%, 40%, 48%, 100% { transform: rotate(0deg); }
+          4%, 20%, 36% { transform: rotate(12deg); }
+          12%, 28%, 44% { transform: rotate(-10deg); }
+        }
+        @keyframes oli-robot-left-leg {
+          0%, 8%, 16%, 24%, 32%, 40%, 48%, 100% { transform: rotate(0deg); }
+          4%, 20%, 36% { transform: rotate(-10deg); }
+          12%, 28%, 44% { transform: rotate(12deg); }
+        }
+        @keyframes oli-robot-left-arm {
+          0%, 8%, 16%, 24%, 32%, 40%, 48%, 100% { transform: rotate(0deg); }
+          4%, 20%, 36% { transform: rotate(10deg); }
+          12%, 28%, 44% { transform: rotate(-10deg); }
+        }
+        @keyframes oli-robot-right-arm {
+          0%, 8%, 16%, 24%, 32%, 40%, 48%, 58%, 90%, 100% { transform: rotate(0deg); }
+          4%, 20%, 36% { transform: rotate(-10deg); }
+          12%, 28%, 44% { transform: rotate(10deg); }
+          64% { transform: rotate(108deg); }
+          68%, 76% { transform: rotate(100deg); }
+          72%, 80% { transform: rotate(115deg); }
+          84% { transform: rotate(108deg); }
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- ============ ground ============ -->
+  <rect width="1280" height="796" fill="#ffffff"/>
+  <rect x="24" y="24" width="1232" height="748" fill="none" stroke="rgba(31,39,51,0.14)" stroke-width="1"/>
+
+  <!-- ============ title ============ -->
+  <text x="64" y="96" class="serif" font-size="40" font-weight="700" letter-spacing="-0.5">LimX-VLA <tspan font-weight="400" class="soft">(V³-0)</tspan></text>
+  <text x="66" y="124" class="sans soft" font-size="15" letter-spacing="0.3">Asynchronous dual-GPU humanoid VLA architecture</text>
+
+  <!-- legend -->
+  <g class="mono" font-size="11.5" letter-spacing="0.8">
+    <rect x="1108" y="56" width="14" height="14" fill="#4338ca"/>
+    <text x="1132" y="68">SLOW</text>
+    <rect x="1108" y="82" width="14" height="14" fill="#e8590c"/>
+    <text x="1132" y="94">FAST</text>
+    <rect x="1108" y="108" width="14" height="14" fill="#0b7285"/>
+    <text x="1132" y="120">REAL-TIME</text>
+  </g>
+
+  <!-- ============ layer 1 · containers & cards ============ -->
+
+  <!-- sensing rail -->
+  <rect x="64" y="246" width="260" height="52" class="card"/>
+  <rect x="64" y="246" width="3" height="52" fill="#1f2733" opacity="0.55"/>
+  <text x="88" y="278" class="sans" font-size="16" font-weight="700">Head + Wrist Cameras</text>
+
+  <rect x="64" y="310" width="260" height="52" class="card"/>
+  <rect x="64" y="310" width="3" height="52" fill="#1f2733" opacity="0.55"/>
+  <text x="88" y="342" class="sans" font-size="16" font-weight="700">Language Instruction</text>
+
+  <rect x="64" y="430" width="260" height="52" class="card"/>
+  <rect x="64" y="430" width="3" height="52" fill="#1f2733" opacity="0.55"/>
+  <text x="88" y="462" class="sans" font-size="16" font-weight="700">Robot State</text>
+
+  <!-- GPU 1 -->
+  <rect x="384" y="184" width="372" height="184" rx="14" fill="#eef0fd"/>
+  <text x="408" y="226" class="sans" font-size="17" font-weight="800" letter-spacing="0.3">GPU 1</text>
+  <text x="408" y="248" class="sans soft" font-size="12.5" letter-spacing="0.4">Slow Intelligence</text>
+  <g fill="none" stroke="#4338ca" stroke-opacity="0.4" stroke-width="2" stroke-linecap="round">
+    <rect x="698" y="206" width="30" height="30" rx="4"/>
+    <rect x="706" y="214" width="14" height="14" rx="2"/>
+    <path d="M705 206V199M713 206V199M721 206V199M705 236V243M713 236V243M721 236V243M698 213H691M698 221H691M698 229H691M728 213H735M728 221H735M728 229H735"/>
+  </g>
+
+  <rect x="408" y="256" width="324" height="88" class="card"/>
+  <rect x="408" y="256" width="3" height="88" fill="#4338ca"/>
+  <text x="432" y="306" class="sans" font-size="16.5" font-weight="700">Vision-Language Model</text>
+
+  <!-- GPU 2 -->
+  <rect x="844" y="184" width="372" height="304" rx="14" fill="#fdf0e8"/>
+  <text x="868" y="226" class="sans" font-size="17" font-weight="800" letter-spacing="0.3">GPU 2</text>
+  <text x="868" y="248" class="sans soft" font-size="12.5" letter-spacing="0.4">Fast Reactive Policy</text>
+  <g fill="none" stroke="#e8590c" stroke-opacity="0.4" stroke-width="2" stroke-linecap="round">
+    <rect x="1158" y="206" width="30" height="30" rx="4"/>
+    <rect x="1166" y="214" width="14" height="14" rx="2"/>
+    <path d="M1165 206V199M1173 206V199M1181 206V199M1165 236V243M1173 236V243M1181 236V243M1158 213H1151M1158 221H1151M1158 229H1151M1188 213H1195M1188 221H1195M1188 229H1195"/>
+  </g>
+
+  <rect x="868" y="260" width="324" height="58" class="card"/>
+  <rect x="868" y="260" width="3" height="58" fill="#e8590c"/>
+  <text x="892" y="295" class="sans" font-size="16.5" font-weight="700">Independent Visual Module</text>
+
+  <rect x="868" y="384" width="324" height="88" class="card"/>
+  <rect x="868" y="384" width="3" height="88" fill="#e8590c"/>
+  <text x="892" y="434" class="sans" font-size="16.5" font-weight="700">Action Expert</text>
+
+  <!-- execution slab -->
+  <g transform="translate(0 -140)">
+  <rect x="24" y="660" width="1232" height="252" fill="#e7f5f8"/>
+  <text x="64" y="692" class="sans eyebrow brass">REAL-TIME EXECUTION LAYER</text>
+
+  <!-- Oli (far left, under the sensing rail: the loop closes here) -->
+  <rect x="64" y="706" width="360" height="164" fill="#fffdf8" stroke="rgba(31,39,51,0.18)" stroke-width="1"/>
+  <rect x="64" y="706" width="3" height="164" fill="#8a94a3"/>
+  <text x="88" y="748" class="serif lite" font-size="21" font-weight="700">Oli</text>
+  <text x="88" y="774" class="sans" font-size="12.5" fill="#4a4f58">LimX Humanoid</text>
+  <rect x="88" y="792" width="70" height="24" rx="4" fill="none" stroke="#5b6675" stroke-opacity="0.7" stroke-width="1"/>
+  <text x="123" y="808" text-anchor="middle" class="mono lite" font-size="11.5">43 DoF</text>
+  <g transform="translate(84 12) translate(264 776) scale(1.12) translate(-264 -776)" stroke="#1f2733" stroke-linecap="round" stroke-linejoin="round">
+    <g class="oli-motion">
+      <g class="oli-body">
+        <rect x="252" y="716" width="24" height="15" rx="2.5" fill="none" stroke-width="2"/>
+        <rect x="255.5" y="719.5" width="17" height="7" rx="1.5" fill="#1f2733" stroke="none"/>
+        <path d="M264 731 V737" fill="none" stroke-width="2"/>
+        <path d="M248 737 H280 L272 776 H256 Z" fill="none" stroke-width="2"/>
+        <path d="M259 746 H269" fill="none" stroke-width="1.4" opacity="0.55"/>
+        <path d="M264 776 V781 M255 782 H273" fill="none" stroke-width="2"/>
+      </g>
+      <g class="oli-robot-right-arm">
+        <circle cx="244" cy="741" r="3.4" fill="none" stroke-width="1.8"/>
+        <path d="M243 745 L241 762 L240 779" fill="none" stroke-width="2"/>
+        <circle cx="240" cy="783.5" r="3" fill="#1f2733" stroke="none"/>
+      </g>
+      <g class="oli-robot-left-arm">
+        <circle cx="284" cy="741" r="3.4" fill="none" stroke-width="1.8"/>
+        <path d="M285 745 L287 762 L288 779" fill="none" stroke-width="2"/>
+        <circle cx="288" cy="783.5" r="3" fill="#1f2733" stroke="none"/>
+      </g>
+      <g class="oli-robot-right-leg">
+        <path d="M258 783 L256 806" fill="none" stroke-width="4.2"/>
+        <circle cx="256" cy="811" r="4" fill="none" stroke-width="1.8"/>
+        <path d="M253.5 815 L252.5 830 M258.5 815 L257.5 830" fill="none" stroke-width="1.5"/>
+        <rect x="246" y="830" width="13" height="5" rx="2" fill="#1f2733" stroke="none"/>
+      </g>
+      <g class="oli-robot-left-leg">
+        <path d="M270 783 L272 806" fill="none" stroke-width="4.2"/>
+        <circle cx="272" cy="811" r="4" fill="none" stroke-width="1.8"/>
+        <path d="M269.5 815 L270.5 830 M274.5 815 L275.5 830" fill="none" stroke-width="1.5"/>
+        <rect x="266" y="830" width="13" height="5" rx="2" fill="#1f2733" stroke="none"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- S0 / WBT -->
+  <rect x="644" y="744" width="360" height="88" fill="#fffdf8" stroke="rgba(31,39,51,0.18)" stroke-width="1"/>
+  <rect x="644" y="744" width="3" height="88" fill="#0b7285"/>
+  <text x="668" y="794" class="sans lite" font-size="16.5" font-weight="700">LimX Whole-Body Tracker</text>
+  </g>
+
+  <!-- ============ layer 2 · wires, ports, arrowheads ============ -->
+
+  <!-- rail → GPU 1 -->
+  <path class="line wire" d="M324 272 H402" marker-end="url(#a-ink)"/>
+  <circle cx="324" cy="272" r="4" fill="#1f2733"/>
+  <path class="line wire" d="M324 336 H402" marker-end="url(#a-ink)"/>
+  <circle cx="324" cy="336" r="4" fill="#1f2733"/>
+
+  <!-- shared vision stream: cameras → GPU2 / independent visual module -->
+  <path class="line wire" d="M300 246 V174 Q300 160 314 160 H1016 Q1030 160 1030 174 V254" marker-end="url(#a-ink)"/>
+  <circle cx="300" cy="246" r="4" fill="#1f2733"/>
+
+  <!-- visual features: module → S1 (shared spine) -->
+  <path class="line wire" d="M1030 318 V378" marker-end="url(#a-ink)"/>
+  <circle cx="1030" cy="318" r="4" fill="#1f2733"/>
+
+  <!-- robot state → GPU2 / S1 -->
+  <path class="line wire" d="M324 456 H862" marker-end="url(#a-ink)"/>
+  <circle cx="324" cy="456" r="4" fill="#1f2733"/>
+
+  <!-- S2 → latest intent latent → S1 -->
+  <path class="line" d="M570 344 V376" stroke="#4338ca" stroke-width="2.25" fill="none" marker-end="url(#a-cobalt)"/>
+  <circle cx="570" cy="344" r="4" fill="#4338ca"/>
+  <rect x="440" y="382" width="260" height="52" class="card"/>
+  <rect x="440" y="382" width="3" height="52" fill="#1f2733" opacity="0.55"/>
+  <text x="464" y="414" class="sans" font-size="16" font-weight="700">Latest intent latent</text>
+  <path class="line flowline" d="M700 408 H862" stroke="url(#bridge)" stroke-width="2.75" fill="none" marker-end="url(#a-verm)"/>
+  <circle cx="700" cy="408" r="4" fill="#4338ca"/>
+  <text x="714" y="399" class="mono cobalt" font-size="11.5" font-weight="700">&lt; 5 Hz</text>
+
+  <!-- S1 → S0 (crosses into the slab) -->
+  <path class="line" d="M1030 472 V636 Q1030 648 1018 648 H1010" stroke="#0b7285" stroke-width="2.25" fill="none" marker-end="url(#a-brass)"/>
+  <circle cx="1030" cy="472" r="4" fill="#0b7285"/>
+  <text x="1044" y="562" class="mono brass" font-size="11.5" font-weight="700">50 Hz</text>
+
+  <!-- S0 output flows directly to Oli -->
+  <g transform="translate(0 -140)">
+  <path class="line" d="M644 788 H430" stroke="#0b7285" stroke-width="2.25" fill="none" marker-end="url(#a-brass)"/>
+  <circle cx="644" cy="788" r="4" fill="#0b7285"/>
+  <text x="537" y="777" text-anchor="middle" class="mono brass" font-size="12" font-weight="700">1000 Hz</text>
+
+  <!-- feedback bus: Oli → sensing rail -->
+  <path class="line" d="M64 846 H56 Q40 846 40 832 V660" stroke="#5b6675" stroke-width="2" fill="none"/>
+  <circle cx="64" cy="846" r="4" fill="#5b6675"/>
+  </g>
+  <path class="line" d="M40 520 V284 Q40 272 48 272 H58" stroke="#5b6675" stroke-width="2" fill="none" marker-end="url(#a-slate-s)"/>
+  <path class="line" d="M40 456 H58" stroke="#5b6675" stroke-width="2" fill="none" marker-end="url(#a-slate-s)"/>
+  <circle cx="40" cy="456" r="3.6" fill="#5b6675"/>
+</svg>

@@ -61,7 +61,7 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory site
 
 五家公司分别展示；破壳标为当前，小米汽车与图森未来标为实习。研究方向不作为未确认的正式职级，不补写任职年份。根据用户确认，闫岩、王峰、王乃岩的指导关系写入图森未来实习经历。
 
-用户确认在逐际动力支持 COSA 0.5 相关工作；经历条目附官方技术报告 https://www.limxdynamics.com/cosa05v3/#zh 。该说明不推断具体模块负责人或论文作者身份。
+用户确认在逐际动力为 COSA 0.5 提供数据、模型与部分算法支持；Highlights 将其作为产业项目展示，职业经历同步说明个人贡献，附官方技术报告 https://www.limxdynamics.com/cosa05v3/#zh 。该说明不推断具体模块负责人或论文作者身份。配图为报告中的官方架构图 https://limx-video.oss-cn-beijing.aliyuncs.com/cosa05v3/limx-vla-architecture.svg ，原样保存为 `assets/cosa05-architecture.svg`。
 
 标识作为经历识别使用，素材保留原样：
 

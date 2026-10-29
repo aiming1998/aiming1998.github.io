@@ -105,6 +105,45 @@
       ]
     },
     {
+      "id": "cosa05",
+      "draft": false,
+      "year": "2026",
+      "kind": {
+        "en": "Industry project · 2026",
+        "zh": "产业项目 · 2026"
+      },
+      "title": {
+        "en": "COSA 0.5 · Humanoid VLA V³-0",
+        "zh": "COSA 0.5 · 人形 VLA V³-0"
+      },
+      "summary": {
+        "en": "The V³-0 stack in COSA 0.5 combines humanoid whole-body mobile manipulation with human-in-the-loop reinforcement learning on real robots.",
+        "zh": "COSA 0.5 的 V³-0 技术栈将人形机器人的全身移动操作与人类在环真机强化学习相结合。"
+      },
+      "role_label": {
+        "en": "My contribution",
+        "zh": "个人贡献"
+      },
+      "contribution": {
+        "en": "Provided support for data, models, and selected algorithms.",
+        "zh": "提供数据、模型与部分算法支持。"
+      },
+      "result": {
+        "en": "The official report demonstrates continuous room tidying and whole-body expert intervention on the Oli humanoid.",
+        "zh": "官方报告展示 Oli 人形机器人连续整理房间与全身专家接管等真机演示。"
+      },
+      "image": "assets/cosa05-architecture.svg",
+      "links": [
+        {
+          "label": {
+            "en": "Official technical report & demos",
+            "zh": "官方技术报告与演示"
+          },
+          "url": "https://www.limxdynamics.com/cosa05v3/#zh"
+        }
+      ]
+    },
+    {
       "id": "fluxvla",
       "draft": false,
       "year": "2026",
@@ -287,8 +326,8 @@
         "zh": "具身智能与机器人学习"
       },
       "description": {
-        "en": "Worked on FluxVLA and ARM, reinforcement learning, and humanoid loco-manipulation. Supported work on COSA 0.5.",
-        "zh": "参与 FluxVLA、ARM 开源项目，以及强化学习、人形机器人移动操作（loco-manipulation）相关工作。支持 COSA 0.5 相关工作。"
+        "en": "Worked on FluxVLA and ARM, reinforcement learning, and humanoid loco-manipulation. Provided support for data, models, and selected algorithms in COSA 0.5.",
+        "zh": "参与 FluxVLA、ARM 开源项目，以及强化学习、人形机器人移动操作（loco-manipulation）相关工作。为 COSA 0.5 提供数据、模型与部分算法支持。"
       },
       "links": [
         {
