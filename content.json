@@ -1,0 +1,219 @@
+{
+  "publish_ready": true,
+  "updated": "2026-10-29",
+  "site_url": "https://aiming1998.github.io/",
+  "page_title": {
+    "en": "Aiming (Yiming Mao) — Embodied AI",
+    "zh": "毛一鸣 Aiming — 具身智能"
+  },
+  "profile": {
+    "name": {
+      "en": "Aiming",
+      "zh": "毛一鸣"
+    },
+    "alternate_name": {
+      "en": "毛一鸣 · Yiming Mao",
+      "zh": "Aiming · Yiming Mao"
+    },
+    "role": {
+      "en": "Algorithm Expert at Pokebot",
+      "zh": "Pokebot · 算法专家"
+    },
+    "intro": {
+      "en": "Embodied intelligence, from data to model training.",
+      "zh": "从数据到模型训练，探索具身智能。"
+    },
+    "bio": {
+      "en": "I work on embodied AI data and end-to-end model training at Pokebot. My research spans robotic manipulation, reward modeling, and 3D perception.",
+      "zh": "我在 Pokebot 担任算法专家，主攻具身智能数据与全链路模型训练。研究工作涉及机器人操作、奖励建模与三维感知。"
+    },
+    "focus": {
+      "en": "I publish as Yiming Mao. Selected work includes ARM and CTRL.",
+      "zh": "论文署名为 Yiming Mao，代表工作包括 ARM 和 CTRL。"
+    },
+    "photo": "assets/portrait.jpg",
+    "photo_rotation": -90,
+    "email": "",
+    "github": "https://github.com/aiming1998",
+    "scholar": "",
+    "linkedin": "",
+    "cv": ""
+  },
+  "projects": [
+    {
+      "id": "arm",
+      "draft": false,
+      "year": "2026",
+      "kind": {
+        "en": "CVPR 2026 Workshop · Poster",
+        "zh": "CVPR 2026 Workshop · Poster"
+      },
+      "title": "ARM: Advantage Reward Modeling for Long-Horizon Manipulation",
+      "authors": [
+        "Yiming Mao",
+        "Zixi Yu",
+        "Weixin Mao",
+        "Yinhao Li",
+        "Qirui Hu",
+        "Zihan Lan",
+        "Minzhao Zhu",
+        "Hua Chen"
+      ],
+      "summary": {
+        "en": "Learning relative advantage from three simple labels—progressing, regressing, and stagnant—to guide policy training for long-horizon manipulation.",
+        "zh": "通过“前进、后退、停滞”三态标注学习相对优势奖励，为长时程机器人操作提供动作加权训练信号。"
+      },
+      "role_label": {
+        "en": "Authorship",
+        "zh": "作者身份"
+      },
+      "contribution": {
+        "en": "First author",
+        "zh": "第一作者"
+      },
+      "result": {
+        "en": "Reported 99.4% success on long-horizon towel folding with GR00T N1.5 + ARM (AW-BC), under the paper’s evaluation setting.",
+        "zh": "论文实验中，GR00T N1.5 + ARM（AW-BC）在长时程叠毛巾任务上达到 99.4% 成功率。"
+      },
+      "image": "assets/arm.jpg",
+      "links": [
+        {
+          "label": {
+            "en": "Project",
+            "zh": "项目主页"
+          },
+          "url": "https://aiming1998.github.io/ARM/"
+        },
+        {
+          "label": {
+            "en": "Paper",
+            "zh": "论文"
+          },
+          "url": "https://arxiv.org/abs/2604.03037"
+        },
+        {
+          "label": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2026W/GigaBrainChallenge/html/Mao_ARM_Advantage_Reward_Modeling_for_Long-Horizon_Manipulation_CVPRW_2026_paper.html"
+        }
+      ]
+    },
+    {
+      "id": "ctrl",
+      "draft": false,
+      "year": "2023",
+      "kind": {
+        "en": "ICCV 2023 · Oral",
+        "zh": "ICCV 2023 · Oral"
+      },
+      "title": "CTRL: Once Detected, Never Lost",
+      "authors": [
+        "Lue Fan",
+        "Yuxue Yang",
+        "Yiming Mao",
+        "Feng Wang",
+        "Yuntao Chen",
+        "Naiyan Wang",
+        "Zhaoxiang Zhang"
+      ],
+      "summary": {
+        "en": "Track-centric offline LiDAR 3D detection, combining bidirectional tracking and temporal refinement to improve automatic annotation.",
+        "zh": "以轨迹为中心的离线 LiDAR 三维检测，结合双向跟踪与时序精修，提升三维检测和自动标注质量。"
+      },
+      "role_label": {
+        "en": "Authorship",
+        "zh": "作者身份"
+      },
+      "contribution": {
+        "en": "Co-author",
+        "zh": "共同作者"
+      },
+      "result": {
+        "en": "Evaluated on the Waymo Open Dataset. Full title: Once Detected, Never Lost: Surpassing Human Performance in Offline LiDAR based 3D Object Detection.",
+        "zh": "在 Waymo Open Dataset 上完成评测；完整论文题名与实验结果见下方论文链接。"
+      },
+      "image": "assets/ctrl.png",
+      "links": [
+        {
+          "label": {
+            "en": "Paper",
+            "zh": "论文"
+          },
+          "url": "https://arxiv.org/abs/2304.12315"
+        },
+        {
+          "label": {
+            "en": "Code",
+            "zh": "代码"
+          },
+          "url": "https://github.com/tusen-ai/SST"
+        },
+        {
+          "label": {
+            "en": "Instructions",
+            "zh": "使用说明"
+          },
+          "url": "https://github.com/tusen-ai/SST/blob/main/docs/CTRL_instructions.md"
+        }
+      ]
+    }
+  ],
+  "software": [
+    {
+      "name": "CTRL · Official implementation",
+      "url": "https://github.com/tusen-ai/SST",
+      "description": {
+        "en": "The official implementation of CTRL is maintained in tusen-ai/SST. The repository includes training and evaluation instructions.",
+        "zh": "CTRL 官方实现位于 tusen-ai/SST，仓库提供训练和评测说明。"
+      }
+    },
+    {
+      "name": "ARM · Project resources",
+      "url": "https://aiming1998.github.io/ARM/",
+      "description": {
+        "en": "Project overview, manipulation demonstrations, method details, and experimental results for ARM.",
+        "zh": "ARM 项目介绍、机器人操作演示、方法细节和实验结果。"
+      }
+    }
+  ],
+  "experience": [
+    {
+      "period": {
+        "en": "Current",
+        "zh": "当前"
+      },
+      "title": {
+        "en": "Algorithm Expert · Pokebot",
+        "zh": "算法专家 · Pokebot"
+      },
+      "description": {
+        "en": "Embodied AI data and end-to-end model training.",
+        "zh": "具身智能数据与全链路模型训练。"
+      }
+    },
+    {
+      "period": {
+        "en": "Research",
+        "zh": "研究方向"
+      },
+      "title": {
+        "en": "Data, learning, and robotic manipulation",
+        "zh": "数据、学习与机器人操作"
+      },
+      "description": {
+        "en": "Current interests include embodied AI data and model training. Published work covers reward modeling for long-horizon manipulation and offline LiDAR 3D detection.",
+        "zh": "当前关注具身智能数据和模型训练；已发表工作涉及长时程操作奖励建模与离线 LiDAR 三维检测。"
+      }
+    },
+    {
+      "period": {
+        "en": "Publications",
+        "zh": "论文署名"
+      },
+      "title": "Yiming Mao",
+      "description": {
+        "en": "Also known as Aiming / 毛一鸣. My GitHub account is aiming1998.",
+        "zh": "英文名 Aiming，中文名毛一鸣，GitHub 账号为 aiming1998。"
+      }
+    }
+  ]
+}
