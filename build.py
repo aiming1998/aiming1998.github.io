@@ -95,7 +95,7 @@ for lang, text in labels.items():
     name = tr(profile["name"], lang)
     role = tr(profile["role"], lang)
     intro = tr(profile["intro"], lang)
-    bio = linked_text(profile["bio"], profile.get("bio_links", []), lang)
+    bio = ''.join(f'<p>{linked_text(paragraph, profile.get("bio_links", []), lang)}</p>' for paragraph in tr(profile["bio"], lang).split('\n\n') if paragraph)
     social = []
     for key, label in [("email", text["email"]), ("github", "GitHub"), ("zhihu", "知乎" if lang == "zh" else "Zhihu"), ("x", "X"), ("scholar", "谷歌学术" if lang == "zh" else "Google Scholar"), ("linkedin", "LinkedIn"), ("cv", text["cv"])]:
         value = profile.get(key)
@@ -186,8 +186,8 @@ for lang, text in labels.items():
 <div class="page">
   <div class="utility"><span class="edition">{esc(text['edition'])}</span><a class="language" href="{text['switch_file']}" data-language="{text['switch_file']}" lang="{'zh-CN' if lang=='en' else 'en'}">{esc(text['switch'])}</a></div>
   <header class="hero">
-    <div class="hero-copy"><h1>{esc(name)}{alternate_name}</h1><p class="role">{esc(role)}</p><p class="intro">{esc(intro)}</p><p class="bio">{bio}</p><p class="focus">{esc(tr(profile['focus'],lang))}</p><nav class="social" aria-label="{'Profile links' if lang=='en' else '个人链接'}">{''.join(social)}</nav></div>
     <figure class="portrait">{portrait}<figcaption>{esc(text['caption']) if not profile.get('photo') else ''}</figcaption></figure>
+    <div class="hero-copy"><h1>{esc(name)}{alternate_name}</h1><p class="role">{esc(role)}</p><p class="intro">{esc(intro)}</p><div class="bio">{bio}</div><nav class="social" aria-label="{'Profile links' if lang=='en' else '个人链接'}">{''.join(social)}</nav></div>
   </header>
   {education}
   {draft_note}

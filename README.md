@@ -17,6 +17,8 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory site
 
 修改 `content.json` 后重新运行 `python3 build.py`。文字字段支持 `en` / `zh`。姓名、当前身份、简介和方向放在 `profile`；项目放在 `projects`；教育背景放在 `education`；开源软件与经历分别放在 `software` 和 `experience`。
 
+首页照片旁的 `profile.bio` 为完整总结性介绍，以空行分段，`bio_links` 配置正文中的人名和项目链接。概述包含自动驾驶感知与预测经验、图森 CTRL、地平线双目量产、逐际 ARM，以及破壳 RoboAPI 与预训练工作；不把完整简介仅放在职业经历或项目卡片内。
+
 个人照片位于 `assets/portrait.jpg`。原始照片保持原样，通过页面 CSS 逆时针旋转 90 度并裁切为头像区。替换正向照片时，删除 `profile.photo_rotation` 或设为 `0`。项目图片和简历也放在 `assets/`。不要把 GitHub fork 当作原创贡献。
 
 公开资料已由用户提供或从论文来源核实。`publish_ready: true` 会生成允许索引的页面和 sitemap。开发草稿时可临时设为 `false`。`--publish` 检查会阻止残留的示例项目发布。

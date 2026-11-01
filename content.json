@@ -20,12 +20,12 @@
       "zh": "破壳 Pokebot · 数据负责人 / 算法专家"
     },
     "intro": {
-      "en": "Embodied intelligence, from data to model pretraining.",
-      "zh": "从数据到模型预训练，探索具身智能。"
+      "en": "From autonomous driving to embodied intelligence.",
+      "zh": "从自动驾驶到具身智能，推动研究成果走向实际应用。"
     },
     "bio": {
-      "en": "I am a Data Lead and Algorithm Expert at PokeBot, contributing to RoboAPI development and leading data work and embodied foundation-model pretraining in collaboration with Huazhe Xu.",
-      "zh": "我在破壳机器人担任数据负责人和算法专家，参与 RoboAPI 研发，负责数据与具身大模型预训练工作，并与许华哲共同开展研发。"
+      "en": "I have seven years of experience developing autonomous-driving algorithms, spanning perception and prediction and the full workflow from data and model training to deployment. I am now a Data Lead and Algorithm Expert at PokeBot, contributing to RoboAPI development and leading data work and embodied foundation-model pretraining in collaboration with Huazhe Xu.\n\nDuring my internship at TuSimple, I collaborated with Lue Fan, Feng Wang, and Naiyan Wang on 3D perception research and co-authored CTRL (ICCV 2023 Oral). CTRL achieved SOTA on both the Waymo Open Dataset 3D Detection and 3D Tracking leaderboards in the 2023 paper’s offline evaluation, providing a high-accuracy approach to industrial 3D object auto-labeling.\n\nAt Horizon Robotics, I worked with Xuewu Lin and Zhizhong Su and led stereo vision algorithm development, translating research into engineering implementations that supported production deployment.\n\nAt LimX Dynamics, I reproduced the towel-folding capability shown in DYNA-1’s public videos, achieving faster folding than the demonstrations in those videos. This research led to ARM, on which I am first author, with code released through FluxVLA.\n\nMy work connects algorithm research, data, model training, and deployment to build reliable intelligent systems. If my work interests you, I welcome conversations about research, technical collaboration, and career opportunities.",
+      "zh": "我拥有 7 年自动驾驶算法研发经验，覆盖感知与预测，并积累了从数据、模型训练到工程部署的完整研发经验。目前，我在破壳机器人担任数据负责人和算法专家，参与 RoboAPI 研发，负责数据与具身大模型预训练工作，并与许华哲共同开展研发。\n\n在图森未来实习期间，我与范略、王峰、王乃岩合作开展三维感知研究，参与完成 CTRL（ICCV 2023 Oral）。该工作在 2023 年论文报告的 Waymo Open Dataset 3D 检测与跟踪离线评测中取得双任务 SOTA，为工业级三维目标自动化标注提供高精度算法方案。\n\n在地平线期间，我与林学武、苏治中合作，主导双目视觉算法研发，推动研究成果工程化落地，支持相关量产项目推进。\n\n在逐际动力期间，我复现了 DYNA-1 公开视频展示的叠毛巾能力，折叠速度超过其视频中的演示表现。相关研究形成了以我为第一作者的 ARM 工作，并通过 FluxVLA 开源。\n\n我的工作贯通算法研究、数据、模型训练与工程部署，关注如何构建可靠、可落地的智能系统。如果你对我的工作感兴趣，欢迎交流研究、技术合作与职业机会。"
     },
     "bio_links": [
       {
@@ -38,12 +38,36 @@
           "zh": "许华哲"
         },
         "url": "http://hxu.rocks/"
+      },
+      {
+        "label": {"en": "Lue Fan", "zh": "范略"},
+        "url": "https://lue.fan/"
+      },
+      {
+        "label": {"en": "Feng Wang", "zh": "王峰"},
+        "url": "https://happynear.wang/"
+      },
+      {
+        "label": {"en": "Naiyan Wang", "zh": "王乃岩"},
+        "url": "https://scholar.google.com/citations?user=yAWtq6QAAAAJ"
+      },
+      {
+        "label": "CTRL",
+        "url": "https://arxiv.org/abs/2304.12315"
+      },
+      {
+        "label": "DYNA-1",
+        "url": "https://www.dyna.co/research/dyna-1"
+      },
+      {
+        "label": "ARM",
+        "url": "https://aiming1998.github.io/ARM/"
+      },
+      {
+        "label": "FluxVLA",
+        "url": "https://github.com/FluxVLA/FluxVLA"
       }
     ],
-    "focus": {
-      "en": "I have seven years of experience developing autonomous-driving algorithms, covering perception and prediction, with experience across data, model training, and deployment.",
-      "zh": "我拥有 7 年自动驾驶算法研发经验，覆盖感知与预测，并积累了从数据、模型训练到工程部署的完整研发经验。"
-    },
     "photo": "assets/portrait.jpg",
     "photo_rotation": -90,
     "email": "",
