@@ -56,6 +56,47 @@
   },
   "projects": [
     {
+      "id": "roboapi",
+      "draft": false,
+      "year": "2026",
+      "kind": {
+        "en": "Industry project · October 2026",
+        "zh": "产业项目 · 2026 年 10 月"
+      },
+      "title": "RoboAPI · Poke-Aurora",
+      "summary": {
+        "en": "A robot API powered by the Poke-Aurora world-action model, translating visual observations, robot state, and language instructions into action chunks for zero-shot manipulation across environments and robot configurations.",
+        "zh": "由 Poke-Aurora 世界—动作模型驱动的机器人 API，根据视觉观测、机器人状态与自然语言指令输出动作块，面向跨场景、跨机器人构型的零样本操作。"
+      },
+      "role_label": {
+        "en": "My contribution",
+        "zh": "个人贡献"
+      },
+      "contribution": {
+        "en": "Contributed to RoboAPI development, with responsibility for data and embodied foundation-model pretraining.",
+        "zh": "参与 RoboAPI 研发，负责数据与具身大模型预训练。"
+      },
+      "result": {
+        "en": "Launched as a public technical preview on October 30, 2026, enabling developers to test the model on their own robots in real environments.",
+        "zh": "2026 年 10 月 30 日发布公开技术预览，开发者可将 API 接入自己的机器人，在真实环境中测试模型能力。"
+      },
+      "image": "assets/roboapi.webp",
+      "links": [
+        {
+          "label": {"en": "Official overview & demos", "zh": "官方介绍与演示"},
+          "url": {"en": "https://pokebot.com/ai", "zh": "https://pokebot.com/zh-cn/ai"}
+        },
+        {
+          "label": {"en": "Documentation", "zh": "开发文档"},
+          "url": {"en": "https://developers.pokebot.com/docs/roboapi/latest", "zh": "https://developers.pokebot.com/zh/docs/roboapi/latest"}
+        },
+        {
+          "label": {"en": "Try RoboAPI", "zh": "体验 RoboAPI"},
+          "url": "https://platform.pokebot.com/"
+        }
+      ]
+    },
+    {
       "id": "arm",
       "draft": false,
       "year": "2026",
@@ -286,6 +327,14 @@
     }
   ],
   "software": [
+    {
+      "name": {"en": "RoboAPI · Developer resources", "zh": "RoboAPI · 开发者资源"},
+      "url": {"en": "https://developers.pokebot.com/docs/roboapi/latest", "zh": "https://developers.pokebot.com/zh/docs/roboapi/latest"},
+      "description": {
+        "en": "Official documentation for connecting robots, calling the model API, and running manipulation tasks with RoboAPI.",
+        "zh": "RoboAPI 官方开发文档，包含机器人接入、模型 API 调用与操作任务运行指南。"
+      }
+    },
     {
       "name": "FluxVLA Engine",
       "url": "https://github.com/FluxVLA/FluxVLA",

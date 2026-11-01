@@ -114,7 +114,7 @@ for lang, text in labels.items():
             visual = f'<img src="{safe_url(project["image"])}" alt="{esc(tr(project["title"],lang))}" loading="lazy" width="440" height="320">'
         else:
             visual = f'<div class="placeholder-visual" role="img" aria-label="{esc(text["visual"])}"><b>{esc(project["year"])}</b><span>{esc(text["visual"])}</span></div>'
-        project_links = "".join(link(item["url"], tr(item["label"], lang)) for item in project.get("links", []))
+        project_links = "".join(link(tr(item["url"], lang), tr(item["label"], lang)) for item in project.get("links", []))
         badge = f'<span class="draft-label">{esc(text["sample"])}</span>' if project.get("draft") else ""
         kind_class = ' project-kicker-highlight' if project.get('kind_highlight') else ''
         author_line = ''
@@ -131,7 +131,7 @@ for lang, text in labels.items():
           <dl class="detail"><dt>{esc(role_label)}</dt><dd>{esc(tr(project['contribution'],lang))}</dd></dl>
           <dl class="detail"><dt>{esc(text['result'])}</dt><dd>{esc(tr(project['result'],lang))}</dd></dl>
           <div class="project-links">{project_links}</div></div></article>''')
-    software = "".join(f'<article class="software-item"><h3>{link(item["url"],tr(item["name"],lang))}</h3><p>{esc(tr(item["description"],lang))}</p></article>' for item in data["software"])
+    software = "".join(f'<article class="software-item"><h3>{link(tr(item["url"],lang),tr(item["name"],lang))}</h3><p>{esc(tr(item["description"],lang))}</p></article>' for item in data["software"])
     if not software:
         software = f'<div class="empty"><h3>{esc(text["software_empty"])}</h3><p>{esc(text["software_desc"])}</p></div>'
     experience_items = []

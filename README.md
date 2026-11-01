@@ -40,6 +40,9 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory site
 
 ## 内容与素材来源
 
+- RoboAPI 作为最新产业项目放入 Highlights 首项，官方介绍与演示：https://pokebot.com/ai （中文：https://pokebot.com/zh-cn/ai ）。2026 年 10 月 30 日公开技术预览；由 Poke-Aurora 世界—动作模型提供动作预测。个人贡献按本人确认的 RoboAPI 研发、数据与具身大模型预训练职责展示，不推断整个项目负责人或论文作者。
+- RoboAPI 开发文档：https://developers.pokebot.com/docs/roboapi/latest （中文：https://developers.pokebot.com/zh/docs/roboapi/latest ）；体验入口：https://platform.pokebot.com/ 。官方技术报告尚未发布，因此不添加论文或开源代码链接。
+- RoboAPI 项目配图为官方发布视频封面，原样保存为 `assets/roboapi.webp`：https://www.pokebot.com/images/ai/roboapi-launch-film-poster-en.webp 。
 - 姓名、英文名、Pokebot 算法专家身份、具身智能数据与全链路模型训练方向、个人照片：用户在当前对话提供。
 - ARM 论文与第一作者身份：https://arxiv.org/abs/2604.03037 。CVF 官方记录为 CVPR 2026 Workshops（GigaBrain Challenge），Poster 形式由用户提供。
 - ARM 官方条目：https://openaccess.thecvf.com/content/CVPR2026W/GigaBrainChallenge/html/Mao_ARM_Advantage_Reward_Modeling_for_Long-Horizon_Manipulation_CVPRW_2026_paper.html 。
