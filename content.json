@@ -557,9 +557,15 @@
         "zh": "自动驾驶算法研究"
       },
       "description": {
-        "en": "",
-        "zh": ""
+        "en": "Collaborated with Hongwei on data feedback loops and cloud-based large-model research and development for autonomous driving.",
+        "zh": "与 Hongwei 合作，参与自动驾驶数据闭环与云端大模型研发。"
       },
+      "description_links": [
+        {
+          "label": "Hongwei",
+          "url": "https://scholar.google.com/citations?user=kRvS9KAAAAAJ&hl=zh-CN"
+        }
+      ],
       "logo": "assets/xiaomi-orange.png",
       "url": "https://www.xiaomiauto.com/global"
     }
