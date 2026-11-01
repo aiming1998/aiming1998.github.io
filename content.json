@@ -56,6 +56,10 @@
         "url": "https://scholar.google.com/citations?user=pfXQwcQAAAAJ&hl=zh-CN"
       },
       {
+        "label": {"en": "Zhizhong Su", "zh": "苏治中"},
+        "url": "https://scholar.google.com/citations?user=HQfc8TEAAAAJ&hl=zh-CN"
+      },
+      {
         "label": "CTRL",
         "url": "https://arxiv.org/abs/2304.12315"
       },
@@ -487,6 +491,10 @@
         {
           "label": {"en": "Xuewu Lin", "zh": "林学武"},
           "url": "https://scholar.google.com/citations?user=pfXQwcQAAAAJ&hl=zh-CN"
+        },
+        {
+          "label": {"en": "Zhizhong Su", "zh": "苏治中"},
+          "url": "https://scholar.google.com/citations?user=HQfc8TEAAAAJ&hl=zh-CN"
         }
       ],
       "logo": "assets/horizon.png",
