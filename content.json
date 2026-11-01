@@ -52,6 +52,10 @@
         "url": "https://scholar.google.com/citations?user=yAWtq6QAAAAJ"
       },
       {
+        "label": {"en": "Xuewu Lin", "zh": "林学武"},
+        "url": "https://scholar.google.com/citations?user=pfXQwcQAAAAJ&hl=zh-CN"
+      },
+      {
         "label": "CTRL",
         "url": "https://arxiv.org/abs/2304.12315"
       },
@@ -479,6 +483,12 @@
         "en": "Worked with Xuewu Lin and Zhizhong Su, leading stereo vision algorithm development and supporting deployment in production programs. My work also covered general perception, occupancy, world models, and end-to-end driving. Mentored by Xuewu Lin.",
         "zh": "与林学武、苏治中合作，主导双目视觉算法研发，推动研究成果工程化落地，支持相关量产项目推进。工作还涉及泛感知算法、occupancy、世界模型与端到端自动驾驶，mentor 为林学武。"
       },
+      "description_links": [
+        {
+          "label": {"en": "Xuewu Lin", "zh": "林学武"},
+          "url": "https://scholar.google.com/citations?user=pfXQwcQAAAAJ&hl=zh-CN"
+        }
+      ],
       "logo": "assets/horizon.png",
       "url": "https://www.horizon.auto/"
     },
