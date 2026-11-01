@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import html
 import json
+import re
 import shutil
 from pathlib import Path
 from urllib.parse import urlparse
@@ -36,6 +37,14 @@ def link(url, label, extra=""):
     external = ' target="_blank" rel="noopener noreferrer"' if url.startswith(("https://", "http://")) else ""
     return f'<a href="{safe_url(url)}"{external}{extra}>{esc(label)}</a>'
 
+def linked_text(value, references, lang):
+    rendered = esc(tr(value, lang))
+    targets = {esc(tr(item["label"], lang)): item for item in references}
+    if not targets:
+        return rendered
+    pattern = "|".join(re.escape(label) for label in sorted(targets, key=len, reverse=True))
+    return re.sub(pattern, lambda match: link(targets[match[0]]["url"], tr(targets[match[0]]["label"], lang)), rendered)
+
 if args.publish:
     checks = [
         (data.get("publish_ready") is True, "Set publish_ready only after identity and content are confirmed."),
@@ -64,7 +73,7 @@ labels = {
         "software_desc": "Selected repositories will appear here, with the problem each solves and my role in the work.",
         "about_title": "Professional experience", "about_empty": "A little more about me.", "education_title": "Education",
         "about_desc": "Education, professional experience, and current interests will be added once the details are confirmed.",
-        "contact": "Let’s connect.", "contact_desc": "For conversations about embodied AI, research, and collaboration.",
+        "contact": "Let’s connect.", "contact_desc": "Interested in my work? Let’s talk research, technical collaboration, or career opportunities.",
         "contact_pending": "Contact details to be added", "email": "Email", "cv": "CV", "updated": "Updated", "draft_footer": "Draft · Not published",
     },
     "zh": {
@@ -77,7 +86,7 @@ labels = {
         "software_desc": "这里将展示精选代码仓库，说明它们解决的问题，以及我在其中的具体贡献。",
         "about_title": "职业经历", "about_empty": "关于我的更多信息。", "education_title": "教育背景",
         "about_desc": "教育背景、工作经历和当前关注的方向，将在信息确认后补充。",
-        "contact": "保持联系。", "contact_desc": "欢迎交流具身智能、技术研究与合作。",
+        "contact": "保持联系。", "contact_desc": "如果你对我的工作感兴趣，欢迎交流研究、技术合作与职业机会。",
         "contact_pending": "联系方式待补充", "email": "邮件", "cv": "简历", "updated": "更新于", "draft_footer": "草稿 · 尚未发布",
     }
 }
@@ -86,10 +95,7 @@ for lang, text in labels.items():
     name = tr(profile["name"], lang)
     role = tr(profile["role"], lang)
     intro = tr(profile["intro"], lang)
-    bio = esc(tr(profile["bio"], lang))
-    for reference in profile.get("bio_links", []):
-        label = tr(reference["label"], lang)
-        bio = bio.replace(esc(label), link(reference["url"], label), 1)
+    bio = linked_text(profile["bio"], profile.get("bio_links", []), lang)
     social = []
     for key, label in [("email", text["email"]), ("github", "GitHub"), ("zhihu", "知乎" if lang == "zh" else "Zhihu"), ("x", "X"), ("scholar", "谷歌学术" if lang == "zh" else "Google Scholar"), ("linkedin", "LinkedIn"), ("cv", text["cv"])]:
         value = profile.get(key)
@@ -132,7 +138,7 @@ for lang, text in labels.items():
     for item in data["experience"]:
         company = link(item['url'], tr(item['title'], lang)) if item.get('url') else esc(tr(item['title'], lang))
         description = tr(item.get('description', ''), lang)
-        detail = f'<p class="experience-description">{esc(description)}</p>' if description else ''
+        detail = ''.join(f'<p class="experience-description">{linked_text(paragraph, item.get("description_links", []), lang)}</p>' for paragraph in description.split('\n\n') if paragraph)
         experience_links = ''.join(link(entry['url'], tr(entry['label'], lang)) for entry in item.get('links', []))
         resources = f'<div class="experience-links">{experience_links}</div>' if experience_links else ''
         current = ' experience-current' if item.get('current') else ''
