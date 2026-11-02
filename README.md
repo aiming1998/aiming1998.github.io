@@ -1,6 +1,6 @@
 # 个人主页
 
-毛一鸣 / Aiming（论文署名 Yiming Mao）的轻量双语个人主页。参考 Qiayuan Liao 主页的信息结构，代码为独立实现。没有外部字体、统计脚本或运行时依赖。
+毛一鸣 / Aiming（论文署名 Yiming Mao）的轻量双语个人主页。
 
 目标网址：https://aiming1998.github.io/ 。GitHub 仓库：`aiming1998/aiming1998.github.io`。
 
