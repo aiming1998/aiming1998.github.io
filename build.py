@@ -97,7 +97,7 @@ for lang, text in labels.items():
     intro = tr(profile["intro"], lang)
     bio = ''.join(f'<p>{linked_text(paragraph, profile.get("bio_links", []), lang)}</p>' for paragraph in tr(profile["bio"], lang).split('\n\n') if paragraph)
     social = []
-    for key, label in [("email", text["email"]), ("github", "GitHub"), ("zhihu", "知乎" if lang == "zh" else "Zhihu"), ("x", "X"), ("scholar", "谷歌学术" if lang == "zh" else "Google Scholar"), ("linkedin", "LinkedIn"), ("cv", text["cv"])]:
+    for key, label in [("email", text["email"]), ("github", "GitHub"), ("zhihu", "知乎" if lang == "zh" else "Zhihu"), ("x", "X"), ("scholar", "谷歌学术" if lang == "zh" else "Google Scholar"), ("orcid", "ORCID"), ("linkedin", "LinkedIn"), ("cv", text["cv"])]:
         value = profile.get(key)
         if value:
             social.append(link("mailto:" + value if key == "email" else value, label))

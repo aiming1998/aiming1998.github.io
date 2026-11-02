@@ -42,6 +42,7 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory site
 
 ## 内容与素材来源
 
+- ORCID：https://orcid.org/0009-0005-8501-5934 。2026-11-02 由本人 GitHub 资料 https://github.com/aiming1998 与 FluxVLA 作者元数据 https://github.com/FluxVLA/FluxVLA/blob/main/CITATION.cff 交叉确认。
 - RoboAPI 作为最新产业项目放入 Highlights 首项，官方介绍与演示：https://pokebot.com/ai （中文：https://pokebot.com/zh-cn/ai ）。2026 年 10 月 30 日公开技术预览；由 Poke-Aurora 世界—动作模型提供动作预测。个人贡献按本人确认的 RoboAPI 研发、数据与具身大模型预训练职责展示，不推断整个项目负责人或论文作者。
 - RoboAPI 开发文档：https://developers.pokebot.com/docs/roboapi/latest （中文：https://developers.pokebot.com/zh/docs/roboapi/latest ）；体验入口：https://platform.pokebot.com/ 。官方技术报告尚未发布，因此不添加论文或开源代码链接。
 - RoboAPI 项目配图为官方发布视频封面，原样保存为 `assets/roboapi.webp`：https://www.pokebot.com/images/ai/roboapi-launch-film-poster-en.webp 。
