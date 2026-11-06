@@ -1,19 +1,19 @@
 {
   "publish_ready": true,
-  "updated": "2026-11-02",
+  "updated": "2026-11-06",
   "site_url": "https://aiming1998.github.io/",
   "page_title": {
-    "en": "Aiming (Yiming Mao) — Embodied AI",
-    "zh": "毛一鸣 Aiming — 具身智能"
+    "en": "Yiming Mao (Aiming) — Embodied AI",
+    "zh": "毛一鸣 Yiming Mao（Aiming）— 具身智能"
   },
   "profile": {
     "name": {
-      "en": "Aiming",
+      "en": "Yiming Mao",
       "zh": "毛一鸣"
     },
     "alternate_name": {
-      "en": "毛一鸣 · Yiming Mao",
-      "zh": "Aiming · Yiming Mao"
+      "en": "毛一鸣 · Aiming",
+      "zh": "Yiming Mao · 英文名 Aiming"
     },
     "role": {
       "en": "Data Lead & Algorithm Expert · Pokebot",
