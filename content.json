@@ -6,6 +6,10 @@
     "en": "Yiming Mao (Aiming) — Embodied AI",
     "zh": "毛一鸣 Yiming Mao（Aiming）— 具身智能"
   },
+  "meta_description": {
+    "en": "Yiming Mao (Aiming, 毛一鸣) works on embodied AI, data and model pretraining at PokeBot. Research includes ARM and CTRL (ICCV 2023 Oral).",
+    "zh": "毛一鸣 Yiming Mao（英文名 Aiming），破壳机器人的数据负责人和算法专家，研究具身智能、数据与大模型预训练。代表工作包括 ARM、CTRL（ICCV 2023 Oral）及 RoboAPI。"
+  },
   "profile": {
     "name": {
       "en": "Yiming Mao",
@@ -15,6 +19,7 @@
       "en": "毛一鸣 · Aiming",
       "zh": "Yiming Mao · 英文名 Aiming"
     },
+    "aliases": ["毛一鸣", "Aiming"],
     "role": {
       "en": "Data Lead & Algorithm Expert · Pokebot",
       "zh": "破壳 Pokebot · 数据负责人 / 算法专家"

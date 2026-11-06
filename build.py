@@ -164,10 +164,35 @@ for lang, text in labels.items():
     tabs = "".join(f'<a class="tab" id="tab-{key}" href="#{key}">{esc(label)}</a>' for key,label in zip(["highlights","software","about"],text["tabs"]))
     contact = link("mailto:" + profile["email"], text["email"] + " ↗") if profile.get("email") else (link(profile["github"], "GitHub ↗") if profile.get("github") else f'<span class="edition">{esc(text["contact_pending"])}</span>')
     filename = "index.html" if lang == "en" else "zh.html"
+    page_title = tr(data.get("page_title", name), lang)
+    description = tr(data.get("meta_description", intro), lang)
     canonical = ""
+    structured_data = ""
+    page_url_meta = ""
     if data.get("site_url"):
         base = data["site_url"].rstrip("/") + "/"
-        canonical = f'<link rel="canonical" href="{safe_url(base + ("" if lang == "en" else filename))}"><link rel="alternate" hreflang="en" href="{safe_url(base)}"><link rel="alternate" hreflang="zh-CN" href="{safe_url(base + "zh.html")}">'
+        page_url = base + ("" if lang == "en" else filename)
+        canonical = f'<link rel="canonical" href="{safe_url(page_url)}"><link rel="alternate" hreflang="en" href="{safe_url(base)}"><link rel="alternate" hreflang="zh-CN" href="{safe_url(base + "zh.html")}"><link rel="alternate" hreflang="x-default" href="{safe_url(base)}">'
+        page_url_meta = f'<meta property="og:url" content="{safe_url(page_url)}">'
+        if data["publish_ready"]:
+            identity = {
+                "@context": "https://schema.org",
+                "@type": "ProfilePage",
+                "url": page_url,
+                "name": page_title,
+                "description": description,
+                "inLanguage": text["lang"],
+                "mainEntity": {
+                    "@type": "Person",
+                    "@id": base + "#person",
+                    "name": profile["name"]["en"],
+                    "alternateName": profile.get("aliases", []),
+                    "url": base,
+                    "sameAs": [profile[key] for key in ("github", "scholar", "orcid", "x", "zhihu", "linkedin") if profile.get(key)],
+                },
+            }
+            identity_json = json.dumps(identity, ensure_ascii=False).replace("<", "\\u003c")
+            structured_data = f'<script type="application/ld+json">{identity_json}</script>'
     robots = "index,follow" if data["publish_ready"] else "noindex,nofollow"
     status = esc(text["draft_footer"]) if not data["publish_ready"] else esc(name)
     alternate_name = f'<span class="alternate-name">{esc(tr(profile["alternate_name"],lang))}</span>' if profile.get('alternate_name') else ''
@@ -176,9 +201,10 @@ for lang, text in labels.items():
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="{robots}"><meta name="theme-color" content="#ffffff">
-<title>{esc(tr(data.get('page_title', name),lang))}</title>
-<meta name="description" content="{esc(intro)}">
-<meta property="og:title" content="{esc(name)}"><meta property="og:description" content="{esc(intro)}"><meta property="og:type" content="website">
+<title>{esc(page_title)}</title>
+<meta name="description" content="{esc(description)}">
+<meta property="og:title" content="{esc(page_title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:type" content="website">{page_url_meta}
+{structured_data}
 {canonical}<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css?v={style_version}"><script src="assets/site.js?v={script_version}" defer></script>
 </head>
 <body>
