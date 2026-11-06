@@ -47,3 +47,13 @@ if (tablist && tabs.length) {
   window.addEventListener('hashchange', () => activate(location.hash.slice(1)));
   activate(location.hash.slice(1));
 }
+
+// Count only visits to the published host, never local or staging previews.
+// The counter stays hidden until the service returns a total successfully.
+const visitorCounter = document.querySelector('[data-counter-host]');
+if (visitorCounter && location.protocol === 'https:' && location.hostname === visitorCounter.dataset.counterHost) {
+  const counterScript = document.createElement('script');
+  counterScript.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
+  counterScript.async = true;
+  document.head.appendChild(counterScript);
+}

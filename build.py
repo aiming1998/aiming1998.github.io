@@ -75,6 +75,7 @@ labels = {
         "about_desc": "Education, professional experience, and current interests will be added once the details are confirmed.",
         "contact": "Let’s connect.", "contact_desc": "Interested in my work? Let’s talk research, technical collaboration, or career opportunities.",
         "contact_pending": "Contact details to be added", "email": "Email", "cv": "CV", "updated": "Updated", "draft_footer": "Draft · Not published",
+        "views": "Total views", "views_note": "Site-wide page views, including repeat visits. Powered by Busuanzi.",
     },
     "zh": {
         "lang": "zh-CN", "switch": "English", "switch_file": "index.html", "edition": "个人主页",
@@ -88,6 +89,7 @@ labels = {
         "about_desc": "教育背景、工作经历和当前关注的方向，将在信息确认后补充。",
         "contact": "保持联系。", "contact_desc": "如果你对我的工作感兴趣，欢迎交流研究、技术合作与职业机会。",
         "contact_pending": "联系方式待补充", "email": "邮件", "cv": "简历", "updated": "更新于", "draft_footer": "草稿 · 尚未发布",
+        "views": "累计访问", "views_note": "全站页面访问次数，包含重复访问。由不蒜子提供统计。",
     }
 }
 
@@ -195,6 +197,9 @@ for lang, text in labels.items():
             structured_data = f'<script type="application/ld+json">{identity_json}</script>'
     robots = "index,follow" if data["publish_ready"] else "noindex,nofollow"
     status = esc(text["draft_footer"]) if not data["publish_ready"] else esc(name)
+    visitor_count = ""
+    if data["publish_ready"] and data.get("site_url"):
+        visitor_count = f'''<span class="visitor-count" id="busuanzi_container_site_pv" data-counter-host="{esc(urlparse(data['site_url']).hostname)}" style="display:none" title="{esc(text['views_note'])}"><a href="https://busuanzi.ibruce.info/" target="_blank" rel="noopener noreferrer">{esc(text['views'])}</a> <span id="busuanzi_value_site_pv"></span></span>'''
     alternate_name = f'<span class="alternate-name">{esc(tr(profile["alternate_name"],lang))}</span>' if profile.get('alternate_name') else ''
     document = f'''<!doctype html>
 <html lang="{text['lang']}">
@@ -224,7 +229,7 @@ for lang, text in labels.items():
     <section class="panel" id="about"><div class="section-top"><h2>{esc(text['about_title'])}</h2></div>{experience}</section>
     <section class="contact"><div><h2>{esc(text['contact'])}</h2><p>{esc(text['contact_desc'])}</p></div>{contact}</section>
   </main>
-  <footer><span>{status}</span><span>{esc(text['updated'])} {esc(data['updated'])}</span></footer>
+  <footer><span>{status}</span>{visitor_count}<span>{esc(text['updated'])} {esc(data['updated'])}</span></footer>
 </div>
 </body>
 </html>'''
