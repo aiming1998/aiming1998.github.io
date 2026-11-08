@@ -2,6 +2,13 @@ name: Publish personal homepage
 on:
   push:
     branches: [main]
+    paths:
+      - content.json
+      - build.py
+      - assets/**
+      - indexnow-key.txt
+      - submit_indexnow.py
+      - .github/workflows/pages.yml
   workflow_dispatch:
 permissions:
   contents: read
@@ -27,3 +34,7 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Notify IndexNow after successful deployment
+        if: ${{ steps.deployment.outcome == 'success' }}
+        continue-on-error: true
+        run: python3 submit_indexnow.py

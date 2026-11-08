@@ -56,6 +56,9 @@ if args.publish:
     for valid, message in checks:
         if not valid:
             raise SystemExit("Publication blocked: " + message)
+    indexnow_key = (ROOT / "indexnow-key.txt").read_text(encoding="utf-8").strip()
+    if not re.fullmatch(r"[0-9a-f]{32}", indexnow_key):
+        raise SystemExit("Publication blocked: invalid public IndexNow ownership key.")
 
 OUT.mkdir(exist_ok=True)
 shutil.copytree(ROOT / "assets", OUT / "assets", dirs_exist_ok=True)
@@ -236,6 +239,9 @@ for lang, text in labels.items():
     (OUT / filename).write_text(document, encoding="utf-8")
 
 (OUT / ".nojekyll").touch()
+if args.publish:
+    # IndexNow verifies site ownership by fetching this intentionally public file.
+    (OUT / f"{indexnow_key}.txt").write_text(indexnow_key + "\n", encoding="utf-8")
 (OUT / "robots.txt").write_text("User-agent: *\n" + ("Allow: /\n" if data["publish_ready"] else "Disallow: /\n"), encoding="utf-8")
 if data.get('site_url') and data['publish_ready']:
     base = data['site_url'].rstrip('/') + '/'
